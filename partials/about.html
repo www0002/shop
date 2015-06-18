@@ -1,0 +1,60 @@
+﻿<div class="container">
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+        <ui-gmap-marker coords='marker.pos' idKey='1'></ui-gmap-marker>
+    </ui-gmap-google-map>
+    <div class="row">
+        <br>
+        <div class="col-sm-12">
+            <h2 class="text-center">Наши Контакты</h2>
+            <br>
+            <h4 class="text-center">
+                <span class="glyphicon glyphicon-home"></span>
+                {{companyData.address}} 
+            </h4>
+            <h4 class="text-center">
+                <span class="glyphicon glyphicon-earphone"></span>
+                {{companyData.phones}} 
+            </h4>
+            <h4 class="text-center">
+                <span class="glyphicon glyphicon-envelope"></span>
+                {{companyData.mail}} 
+            </h4>
+            <br>
+            <h2 class="text-center">Напишите Нам</h2>
+            <br>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">
+                        Имя 
+                    </label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="name" name="name" ng-model="mAttr.name" placeholder="Имя" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="email">
+                        Email 
+                    </label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="email" name="email" ng-model="mAttr.email" placeholder="Email" type="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="message">
+                        Сообщение 
+                    </label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" id="message" name="message" ng-model="mAttr.text" placeholder="Сообщение" required rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <button class="btn btn-warning text-uppercase" ng-click="sendMessage()" type="submit">
+                            Отправить 
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<!--
+<div class="modal-header">
+	<h3 class="modal-title">I'm a modal!</h3>
+</div>
+ -->
+<div class="modal-body">
+	
+	<form class="form-horizontal" role="form" name="RegForm">
+		
+		<!-- <input type="email" class="form-control" name="email" id="email" placeholder="Email" ng-model="cred.email" required autofocus> -->
+		<input type="email" class="form-control" placeholder="Email" ng-model="cred.email" required autofocus>
+		<br>
+		<input type="password" class="form-control" placeholder="Пароль" ng-model="cred.password" required>
+		<br>
+		
+		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+		
+		<button type="submit" class="btn btn-primary" ng-click="login()" ng-show="loginMode">Вход</button>
+		<a class="pull-right" ng-click="switchMode()" ng-show="loginMode">Регистрация</a>
+
+		<button type="submit" class="btn btn-primary" ng-click="register()" ng-show="!loginMode">Регистрация</button>
+		<a class="pull-right" ng-click="switchMode()" ng-show="!loginMode">Вход</a>
+
+	</form>
+	
+</div>
+<!-- 
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="ok()">Вход</button>
+	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+-->

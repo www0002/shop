@@ -1,0 +1,121 @@
+-H "Content-Type: application/json; charset=UTF-8"
+curl -X POST -H "Content-Type: application/json" -d "{\"name\":\"товар\"}" http://localhost:3000/api/products
+
+
+
+
+wget --post-data='json_request={"queries":[{"run":1,"mirna":11028,"gene":11965}],"valuesFormat":"percentile","withSequence":false,"format":"csv"}' http://mirmap.ezlab.org/remote/db
+
+wget --post-data='{"name":"tovar777"}' --header=Content-Type:application/json "http://localhost:3000/api/products"
+
+wget --post-file=json.txt --header=Content-Type:application/json "http://localhost:3000/api/products"
+
+
+
+curl -X POST -H 'Content-Type:application/json' -H 'Accept: application/json' --data-binary @./json.txt http://localhost:3000/api/products -v -s
+
+
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -Body @{name = "tovar"}
+
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -ContentType "application/json" -Body @{name = "tovar"}
+
+"{\r\n    \"name\":  \"товар\"\r\n}"
+
+Invoke-RestMethod -Method Post -Uri "$resource\new" -Body (ConvertTo-Json $body) -Header @{"X-ApiKey"=$apiKey}
+
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -Body (ConvertTo-Json @{name = "tovar"})
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -ContentType "application/json" -Body (ConvertTo-Json @{name = "tovar"})
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -ContentType "application/json" -InFile c:\json.txt
+
+
+$text = "žluťoučký kůň úpěl ďábelské ódy"
+$postData = [System.Text.Encoding]::UTF8.GetBytes($text)
+
+
+
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -Body '{"name":"ElasticSearch"}'
+
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -InFile C:\Users\Operator\Dropbox\shop\json.txt
+
+
+Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -ContentType "application/json" -Body ([System.Text.Encoding]::UTF8.GetBytes($m))
+
+
+
+
+
+
+
+********************************************************************************************************************************
+********************************************************************************************************************************
+********************************************************************************************************************************
+
+PS C:\Users\Operator> $m = ConvertTo-Json @{name="товар"}
+PS C:\Users\Operator> $p = [System.Text.Encoding]::UTF8.GetBytes($m)
+PS C:\Users\Operator> Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -ContentType "application/json" -Body $p
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {"name":"товар","id":38}
+RawContent        : HTTP/1.1 200 OK
+                    Vary: X-HTTP-Method-Override
+                    Connection: keep-alive
+                    Content-Length: 29
+                    Content-Type: application/json; charset=utf-8
+                    Date: Sun, 15 Mar 2015 17:30:10 GMT
+                    X-Powered-By: Express
+
+                    ...
+Forms             : {}
+Headers           : {[Vary, X-HTTP-Method-Override], [Connection, keep-alive], [Content-Length, 29], [Content-Type, app
+                    lication/json; charset=utf-8]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 29
+
+
+
+PS C:\Users\Operator>
+
+********************************************************************************************************************************
+********************************************************************************************************************************
+********************************************************************************************************************************
+
+
+PS C:\Users\Operator> $m = Get-Content c:\json.txt
+PS C:\Users\Operator> $p = [System.Text.Encoding]::UTF8.GetBytes($m)
+PS C:\Users\Operator> Invoke-WebRequest -Uri "http://localhost:3000/api/products" -Method POST -ContentType "application/json" -Body $p
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {"name":"товар \"мовар\"","id":40}
+RawContent        : HTTP/1.1 200 OK
+                    Vary: X-HTTP-Method-Override
+                    Connection: keep-alive
+                    Content-Length: 44
+                    Content-Type: application/json; charset=utf-8
+                    Date: Sun, 15 Mar 2015 19:00:02 GMT
+                    X-Powered-By: Express
+
+                    ...
+Forms             : {}
+Headers           : {[Vary, X-HTTP-Method-Override], [Connection, keep-alive], [Content-Length, 44], [Content-Type, app
+                    lication/json; charset=utf-8]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 44
+
+********************************************************************************************************************************
+********************************************************************************************************************************
+********************************************************************************************************************************
+
+
+wget --post-file="json.txt" --header="Content-Type:application/json; charset=utf-8" "http://localhost:3000/api/products"
+wget -O "prod.answer" --post-file="json.txt" --header="Content-Type:application/json; charset=utf-8" "http://localhost:3000/api/products"
+wget -O "prod.body" -o "prod.text" --post-file="json.txt" --header="Content-Type:application/json; charset=utf-8" "http://localhost:3000/api/products"

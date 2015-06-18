@@ -1,0 +1,124 @@
+﻿<div class="container">
+    <h2 class="main-heading text-center" ng-show="cartIsEmpty()">
+        Корзина пуста!
+    </h2>
+    <div class="table-responsive shopping-cart-table">
+        <table class="table table-bordered" ng-show="!cartIsEmpty()">
+            <thead>
+                <tr>
+                    <td class="text-center">
+                        Фото 
+                    </td>
+                    <td class="text-center">
+                        Наименование 
+                    </td>
+                    <td class="text-center">
+                        Количество 
+                    </td>
+                    <td class="text-center">
+                        Цена 
+                    </td>
+                    <td class="text-center">
+                        Сумма 
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in cart.items">
+                    <td class="text-center">
+                        <a href="product.html">
+                            <img alt="Product Name" height="70" ng-src="data/products/{{item.product_id}}.jpg" title="Product Name"/>
+                        </a>
+                    </td>
+                    <td class="text-center vert-align">
+                        <a ng-href="#/product/{{item.product_id}}">{{item.name}}</a>
+                    </td>
+                    <td class="text-center vert-align">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <div class="input-group btn-block">
+                                    <input class="form-control" name="amt" ng-change="cart.saveItems()" ng-model="item.amt" size="1" type="text"/>
+                                </div>
+                            </div>
+                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('add', item.product_id, 1)" title="Remove" type="button">
+                                    <!-- <i class="fa fa-times-circle"></i> -->
+									<span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('add', item.product_id, -1)" title="Remove" type="button">
+                                    <!-- <i class="fa fa-times-circle"></i> -->
+									<span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('del', item.product_id)" title="Remove" type="button">
+                                    <!-- <i class="fa fa-times-circle"></i> -->
+									<span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                        </form>
+                    </td>
+
+                    <td class="text-center vert-align">
+                        <!-- <i class="fa fa-rub"></i> -->
+                        {{item.price | number : 2}} 
+                    </td>
+                    <td class="text-center vert-align">
+                        <!-- <i class="fa fa-rub"></i> -->
+                        {{(item.price*item.amt) | number : 2}} 
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="text-right" colspan="3">
+                        <strong>Итого </strong>
+                    </td>
+                    <td class="text-right" colspan="2">
+                        <!-- <i class="fa fa-rub"></i> -->
+                        {{cart.getTotal().price | number : 2}} 
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <form class="form-horizontal" ng-show="!cartIsEmpty()">
+        <div class="form-group" ng-show="!user.name">
+            <label class="col-sm-2 control-label" for="name">
+                Имя 
+            </label>
+            <div class="col-sm-8">
+                <input class="form-control" id="name" name="name" ng-model="userData.name" placeholder="Имя" ng-required='!user.name' type="name">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!user.phone">
+            <label class="col-sm-2 control-label" for="phone">
+                Телефон 
+            </label>
+            <div class="col-sm-8">
+                <input class="form-control" name="phone" ng-model="userData.phone" placeholder="Телефон" ng-required='!user.phone' type="phone">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!user.email">
+            <label class="col-sm-2 control-label" for="email">
+                Email 
+            </label>
+            <div class="col-sm-8">
+                <input class="form-control" id="email" name="email" ng-model="userData.email" placeholder="Email" type="email">
+            </div>
+        </div>
+        <div class="form-group" ng-show="!user.address">
+            <label class="col-sm-2 control-label" for="address">
+                Адрес доставки
+            </label>
+            <div class="col-sm-8">
+                <input class="form-control" name="address" ng-model="userData.address" placeholder="Адрес доставки" ng-required='!user.address'>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <button class="btn btn-warning text-uppercase" ng-click="sendOrder()" type="submit">
+                    Оплатить 
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

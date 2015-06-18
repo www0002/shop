@@ -1,0 +1,68 @@
+﻿<div class="container">
+
+	<div class="row product-info">
+		<!-- Left Starts -->
+		<div class="col-sm-4 images-block">
+			<a href="images/product-images/2.jpg">
+				<img alt="Image" class="img-responsive thumbnail" ng-src="data/products/{{id}}.jpg"/>
+			</a>
+		</div>
+
+		<div class="col-sm-8 product-details">
+			<div class="panel-smart">
+
+				<h2>{{product.name}}</h2>
+
+				<hr/>
+
+				<h5>Цена : <span><span><i class="fa fa-rub"></i></span> {{product.price}}</span> </h5>
+				<h5>Наличие : <strong class="label label-danger">Под заказ</strong> </h5>
+
+				<div class="form-group">
+					<div class="controls form-inline">
+						<!-- <label class="text-uppercase" for="input-amt">Количество:</label> -->
+						<h5>Количество : <input class="form-control" id="input-amt" name="amt" size="5" type="text" ng-model="amt"/></h5>
+						
+					</div>
+				</div>
+
+				<div class="cart-button button-group">
+					<button class="btn btn-cart" type="button" ng-click="cart.editItem('add', product.id, amt, product.name, product.price)">
+						В корзину
+						<i class="fa fa-shopping-cart"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- Right Ends -->
+	</div>
+	
+	<br>
+
+	<div class="row product-info">
+	
+		<div class="col-sm-12 product-details">
+
+			<div class="tab-pane" ng-class="{ active : (pTab == 0) }">
+				<p>
+					{{product.description}}
+				</p>
+				<p>
+					18+
+				</p>
+			</div>
+
+			<table class="table table-bordered">
+				<tbody>
+					<tr ng-repeat="prodAtr in productAttributes">
+						<td>{{prodAtr.descr}}</td>
+						<td>{{product[prodAtr.name]}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+	</div>
+
+</div>

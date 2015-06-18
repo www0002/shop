@@ -1,0 +1,11 @@
+--2015-03-19 08:17:26--  http://localhost:3000/api/products
+Resolving localhost (localhost)... ::1, 127.0.0.1
+Connecting to localhost (localhost)|::1|:3000... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 175 [application/json]
+Saving to: 'prod.body'
+
+     0K                                                       100% 2.61M=0s
+
+2015-03-19 08:17:26 (2.61 MB/s) - 'prod.body' saved [175/175]
+

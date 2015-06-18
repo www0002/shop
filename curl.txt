@@ -1,0 +1,11 @@
+﻿curl -X POST -H "Content-Type: application/json" -d '{"name":"товар"}' http://localhost:3000/api/products
+
+curl -H "Content-Type: application/json" --data @body.json http://localhost:8080/ui/webapp/conf
+
+curl -H "Accept:
+" -H "Content-type: application/json" -X POST -d '{"id":100}' http://localhost/api/postJsonReader.do
+
+
+curl -X POST -H "Content-Type: application/json" --data-binary @C:\Users\Operator\Dropbox\shop\json.txt http://localhost:3000/api/products
+
+C:\Users\Operator\Dropbox\shop

@@ -1,0 +1,2004 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'win32ole' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 silly cache add args [ 'win32ole', null ]
+6 verbose cache add spec win32ole
+7 silly cache add parsed spec { raw: 'win32ole',
+7 silly cache add   scope: null,
+7 silly cache add   name: 'win32ole',
+7 silly cache add   rawSpec: '',
+7 silly cache add   spec: '*',
+7 silly cache add   type: 'range' }
+8 verbose addNamed win32ole@*
+9 silly addNamed semver.valid null
+10 silly addNamed semver.validRange *
+11 silly addNameRange { name: 'win32ole', range: '*', hasData: false }
+12 silly mapToRegistry name win32ole
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/win32ole
+16 verbose addNameRange registry:https://registry.npmjs.org/win32ole not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/win32ole
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 18:51:15
+20 verbose request id a887029b5f77a83f
+21 http request GET https://registry.npmjs.org/win32ole
+22 http 200 https://registry.npmjs.org/win32ole
+23 silly get cb [ 200,
+23 silly get   { date: 'Thu, 23 Apr 2015 15:51:34 GMT',
+23 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"66S1R429ZNOW05YEHERE6LY0A"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'cache-control': 'max-age=60',
+23 silly get     'content-length': '22932',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '0',
+23 silly get     'x-served-by': 'cache-ams4133-AMS',
+23 silly get     'x-cache': 'MISS',
+23 silly get     'x-cache-hits': '0',
+23 silly get     'x-timer': 'S1429804294.466215,VS0,VE95',
+23 silly get     vary: 'Accept',
+23 silly get     'keep-alive': 'timeout=10, max=50',
+23 silly get     connection: 'Keep-Alive' } ]
+24 verbose get saving win32ole to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\win32ole\.cache.json
+25 silly addNameRange number 2 { name: 'win32ole', range: '*', hasData: true }
+26 silly addNameRange versions [ 'win32ole', [ '0.0.28', '0.1.3' ] ]
+27 verbose addNamed win32ole@0.1.3
+28 silly addNamed semver.valid 0.1.3
+29 silly addNamed semver.validRange 0.1.3
+30 silly cache afterAdd win32ole@0.1.3
+31 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\win32ole\0.1.3\package\package.json not in flight; writing
+32 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\win32ole\0.1.3\package\package.json written
+33 silly install resolved [ { name: 'win32ole',
+33 silly install resolved     version: '0.1.3',
+33 silly install resolved     description: 'Asynchronous, non-blocking win32ole bindings',
+33 silly install resolved     homepage: 'https://github.com/idobatter/node-win32ole',
+33 silly install resolved     keywords:
+33 silly install resolved      [ 'OLE',
+33 silly install resolved        'COM',
+33 silly install resolved        'ActiveX',
+33 silly install resolved        'ActiveXObject',
+33 silly install resolved        'CreateObject',
+33 silly install resolved        'WSH',
+33 silly install resolved        'WMI',
+33 silly install resolved        'Outlook',
+33 silly install resolved        'Access',
+33 silly install resolved        'Word',
+33 silly install resolved        'Excel',
+33 silly install resolved        'IE',
+33 silly install resolved        'InternetExplorer' ],
+33 silly install resolved     author:
+33 silly install resolved      { name: 'idobatter',
+33 silly install resolved        email: 'idobatter@gmail.com',
+33 silly install resolved        url: 'https://github.com/idobatter' },
+33 silly install resolved     contributors: [ [Object] ],
+33 silly install resolved     repository:
+33 silly install resolved      { type: 'git',
+33 silly install resolved        url: 'git://github.com/idobatter/node-win32ole.git' },
+33 silly install resolved     dependencies:
+33 silly install resolved      { assert: '>= 0.4.9',
+33 silly install resolved        async: '>= 0.1.22',
+33 silly install resolved        'ref-struct': '>= 0.0.5',
+33 silly install resolved        ref: '>= 0.1.3' },
+33 silly install resolved     devDependencies:
+33 silly install resolved      { mocha: '>= 1.8.1',
+33 silly install resolved        assert: '>= 0.4.9',
+33 silly install resolved        async: '>= 0.1.22',
+33 silly install resolved        'ref-struct': '>= 0.0.5',
+33 silly install resolved        ref: '>= 0.1.3' },
+33 silly install resolved     engines: { node: '>= 0.8.18 && < 0.9.0' },
+33 silly install resolved     scripts: { test: 'nmake /a test', install: 'node-gyp rebuild' },
+33 silly install resolved     licenses: [ [Object] ],
+33 silly install resolved     main: './lib/win32ole',
+33 silly install resolved     gypfile: true,
+33 silly install resolved     readme: '# NAME\n\nnode-win32ole - Asynchronous, non-blocking win32ole bindings for [node.js](https://github.com/joyent/node) powered by v8 engine .\n\nwin32ole makes accessibility from node.js to Excel, Word, Access, Outlook, InternetExplorer, WSH ( ActiveXObject / COM ) and so on. It does not need TypeLibrary.\n\n\n# USAGE\n\nInstall with `npm install win32ole`.\n\nIt works as... (version 0.1.x)\n\n``` js\ntry{\n  var win32ole = require(\'win32ole\');\n  // var xl = new ActiveXObject(\'Excel.Application\'); // You may write it as:\n  var xl = win32ole.client.Dispatch(\'Excel.Application\');\n  xl.Visible = true;\n  var book = xl.Workbooks.Add();\n  var sheet = book.Worksheets(1);\n  try{\n    sheet.Name = \'sheetnameA utf8\';\n    sheet.Cells(1, 2).Value = \'test utf8\';\n    var rg = sheet.Range(sheet.Cells(2, 2), sheet.Cells(4, 4));\n    rg.RowHeight = 5.18;\n    rg.ColumnWidth = 0.58;\n    rg.Interior.ColorIndex = 6; // Yellow\n    var result = book.SaveAs(\'testfileutf8.xls\');\n    console.log(result);\n  }catch(e){\n    console.log(\'(exception cached)\\n\' + e);\n  }\n  xl.ScreenUpdating = true;\n  xl.Workbooks.Close();\n  xl.Quit();\n}catch(e){\n  console.log(\'*** exception cached ***\\n\' + e);\n}\n```\n\nThere are 3 ways to make force Garbage Collection for node.js / v8 .\n\n- 1. use huge memory to run GC automatically ( causes abnormal termination )\n- 2. win32ole.force_gc_extension(1);\n- 3. win32ole.force_gc_internal(1);\n\nsee also [examples/ole_args_test_client.js](https://github.com/idobatter/node-win32ole/blob/master/examples/ole_args_test_client.js)\n\n\n# Tutorial and Examples\n\n- [test/init_win32ole.test.js](https://github.com/idobatter/node-win32ole/blob/master/test/init_win32ole.test.js)\n- [test/unicode.test.js](https://github.com/idobatter/node-win32ole/blob/master/test/unicode.test.js)\n- [examples/maze_creator.js](https://github.com/idobatter/node-win32ole/blob/master/examples/maze_creator.js)\n- [examples/maze_solver.js](https://github.com/idobatter/node-win32ole/blob/master/examples/maze_solver.js)\n- [examples/word_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/word_sample.js)\n- [examples/access_mdb_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/access_mdb_sample.js)\n- [examples/outlook_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/outlook_sample.js)\n- [examples/ie_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/ie_sample.js)\n- [examples/typelibrary_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/typelibrary_sample.js)\n- [examples/uncfinder_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/uncfinder_sample.js)\n- [examples/activex_filesystemobject_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/activex_filesystemobject_sample.js)\n- [examples/wmi_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/wmi_sample.js)\n- [examples/wsh_sample.js](https://github.com/idobatter/node-win32ole/blob/master/examples/wsh_sample.js)\n- [examples/ole_args_test_client.js](https://github.com/idobatter/node-win32ole/blob/master/examples/ole_args_test_client.js)\n- [examples/ole_args_test_client_metamorphoses.js](https://github.com/idobatter/node-win32ole/blob/master/examples/ole_args_test_client_metamorphoses.js)\n\n\n# Other built in functions\n\n* win32ole.version(void) // returns version string\n* win32ole.printACP(utf8string) // Utf8 to .ACP\n* win32ole.print(utf8string) // ASCII\n* win32ole.gettimeofday(struct timeval &tv, null) // now arg2 is not used\n* win32ole.sleep(long milliseconds, bool withmessage=false, bool with\\n=false)\n* win32ole.force_gc_extension(long flag) // now flag is dummy\n* win32ole.force_gc_internal(long flag, string) // now flag is dummy\n\n\n# FEATURES\n\n* fix BUG: date\n* BUG: A few samples in win32ole@0.1.0 needs \'._\' ideom.\n* When you use unary operator \'!\' at the place that needs boolean CONDITION (for example \'while(!obj.status){...}\') , you must write \'while(!obj.status._){...}\' to complete v8::Object::ToBoolean() conversion. (NamedPropertyHandler will not be called because v8::Object::ToBoolean() is called directly for unary operator \'!\' instead of v8::Object::valueOf() in ParseUnaryExpression() v8/src/parser.cc .) Do you know how to fake it?\n* V8Variant::OLEGetAttr returns a copy of object, so it uses much memory. I want to fix it.\n* Now \'._\' ideom is obsoleted.\n* Remove \'node-proxy\' from dependencies list.\n* Change default branch to dev0.1.0 .\n* BUG: Some samples in between win32ole@0.0.25 and win32ole@0.0.28 ( examples/maze_creator.js examples/maze_solver.js ) uses huge memory and many disposers will run by v8 GC when maze size is 20*30. I think that each encapsulated V8Variant (by node-proxy) may be big object. So I will try to use v8 accessor handlers ( SetCallAsFunctionHandler / SetNamedPropertyHandler / SetIndexedPropertyHandler ) instead of ( \'__noSuchMethod__\' / \'__noSuchGetter__\' / \'__noSuchSetter__\' ) by node-proxy.\n* So much implements. (can not handle some COM VARIANT types, array etc.)\n* Bug fix. (throws exception when failed to Invoke(), and many test message.)\n* Implement accessors getter, setter and caller. (version 0.1.x) (Some V8Variants were advanced to 0.1.x .)\n\n\n# API\n\nSee the [API documentation](https://github.com/idobatter/node-win32ole/wiki) in the wiki.\n\n\n# BUILDING\n\nThis project uses VC++ 2008 Express (or later) and Python 2.6 (or later) .\n(When using Python 2.5, it needs [multiprocessing 2.5 back port](http://pypi.python.org/pypi/multiprocessing/) .) It needs neither ATL nor MFC.\n\nBulding also requires node-gyp to be installed. You can do this with npm:\n\n    npm install -g node-gyp\n\nTo obtain and build the bindings:\n\n    git clone git://github.com/idobatter/node-win32ole.git\n    cd node-win32ole\n    node-gyp configure\n    node-gyp build\n\nYou can also use [`npm`](https://github.com/isaacs/npm) to download and install them:\n\n    npm install win32ole\n\n\n# TESTS\n\n[mocha](https://github.com/visionmedia/mocha) is required to run unit tests.\n\n    npm install -g mocha\n    nmake /a test\n\n\n# CONTRIBUTORS\n\n* [idobatter](https://github.com/idobatter)\n\n\n# ACKNOWLEDGEMENTS\n\nInspired [Win32OLE](http://www.ruby-doc.org/stdlib/libdoc/win32ole/rdoc/)\n\n\n# LICENSE\n\n`node-win32ole` is [BSD licensed](https://github.com/idobatter/node-win32ole/raw/master/LICENSE).\n',
+33 silly install resolved     readmeFilename: 'README.md',
+33 silly install resolved     bugs: { url: 'https://github.com/idobatter/node-win32ole/issues' },
+33 silly install resolved     _id: 'win32ole@0.1.3',
+33 silly install resolved     _from: 'win32ole@*' } ]
+34 info install win32ole@0.1.3 into C:\Documents and Settings\Operator\Dropbox\shop
+35 info installOne win32ole@0.1.3
+36 verbose installOne of win32ole to C:\Documents and Settings\Operator\Dropbox\shop not in flight; installing
+37 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\win32ole-4597db6074d36ec3.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+38 warn engine win32ole@0.1.3: wanted: {"node":">= 0.8.18 && < 0.9.0"} (current: {"node":"0.12.0","npm":"2.5.1"})
+39 silly install write writing win32ole 0.1.3 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+40 silly cache addNamed cb win32ole@0.1.3
+41 verbose unbuild node_modules\win32ole
+42 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+43 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\win32ole\0.1.3\package.tgz
+44 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+45 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+46 silly gunzTarPerm modes [ '777', '666' ]
+47 silly gunzTarPerm extractEntry package.json
+48 silly gunzTarPerm extractEntry .npmignore
+49 silly gunzTarPerm extractEntry README.md
+50 silly gunzTarPerm extractEntry win32ole.js
+51 silly gunzTarPerm extractEntry binding.gyp
+52 silly gunzTarPerm extractEntry examples/access_mdb_sample.js
+53 silly gunzTarPerm extractEntry examples/maze_creator.js
+54 silly gunzTarPerm extractEntry examples/maze_solver.js
+55 silly gunzTarPerm extractEntry examples/word_sample.js
+56 silly gunzTarPerm extractEntry examples/ie_sample.js
+57 silly gunzTarPerm extractEntry examples/activex_filesystemobject_sample.js
+58 silly gunzTarPerm extractEntry examples/ole_args_test_client_metamorphoses.js
+59 silly gunzTarPerm extractEntry examples/outlook_sample.js
+60 silly gunzTarPerm extractEntry examples/typelibrary_sample.js
+61 silly gunzTarPerm extractEntry examples/uncfinder_sample.js
+62 silly gunzTarPerm extractEntry examples/wmi_sample.js
+63 silly gunzTarPerm extractEntry examples/wsh_sample.js
+64 silly gunzTarPerm extractEntry examples/ole_args_test_client.js
+65 silly gunzTarPerm extractEntry examples/ole_args_tester_server.py
+66 silly gunzTarPerm extractEntry examples/ole_args_tester_client.py
+67 silly gunzTarPerm extractEntry lib/index.js
+68 silly gunzTarPerm extractEntry lib/trace.js
+69 silly gunzTarPerm extractEntry lib/win32ole.js
+70 silly gunzTarPerm extractEntry Makefile
+71 silly gunzTarPerm extractEntry src/node_win32ole.h
+72 silly gunzTarPerm extractEntry src/client.cc
+73 silly gunzTarPerm extractEntry src/force_gc_extension.cc
+74 silly gunzTarPerm extractEntry src/force_gc_internal.cc
+75 silly gunzTarPerm extractEntry src/node_win32ole.cc
+76 silly gunzTarPerm extractEntry src/client.h
+77 silly gunzTarPerm extractEntry src/ole32core.cpp
+78 silly gunzTarPerm extractEntry src/ole32core.h
+79 silly gunzTarPerm extractEntry src/v8variant.cc
+80 silly gunzTarPerm extractEntry src/v8variant.h
+81 silly gunzTarPerm extractEntry src/win32ole_gettimeofday.cc
+82 silly gunzTarPerm extractEntry test/init_win32ole.test.js
+83 silly gunzTarPerm extractEntry test/unicode.test.js
+84 info preinstall win32ole@0.1.3
+85 silly prepareForInstallMany adding assert@>= 0.4.9 from win32ole dependencies
+86 silly prepareForInstallMany adding async@>= 0.1.22 from win32ole dependencies
+87 silly prepareForInstallMany adding ref-struct@>= 0.0.5 from win32ole dependencies
+88 silly prepareForInstallMany adding ref@>= 0.1.3 from win32ole dependencies
+89 silly cache add args [ 'assert@>= 0.4.9', null ]
+90 verbose cache add spec assert@>= 0.4.9
+91 silly cache add args [ 'async@>= 0.1.22', null ]
+92 verbose cache add spec async@>= 0.1.22
+93 silly cache add parsed spec { raw: 'assert@>= 0.4.9',
+93 silly cache add   scope: null,
+93 silly cache add   name: 'assert',
+93 silly cache add   rawSpec: '>= 0.4.9',
+93 silly cache add   spec: '>=0.4.9',
+93 silly cache add   type: 'range' }
+94 verbose addNamed assert@>=0.4.9
+95 silly addNamed semver.valid null
+96 silly addNamed semver.validRange >=0.4.9
+97 silly addNameRange { name: 'assert', range: '>=0.4.9', hasData: false }
+98 silly mapToRegistry name assert
+99 silly mapToRegistry using default registry
+100 silly mapToRegistry registry https://registry.npmjs.org/
+101 silly mapToRegistry uri https://registry.npmjs.org/assert
+102 verbose addNameRange registry:https://registry.npmjs.org/assert not in flight; fetching
+103 silly cache add parsed spec { raw: 'async@>= 0.1.22',
+103 silly cache add   scope: null,
+103 silly cache add   name: 'async',
+103 silly cache add   rawSpec: '>= 0.1.22',
+103 silly cache add   spec: '>=0.1.22',
+103 silly cache add   type: 'range' }
+104 verbose addNamed async@>=0.1.22
+105 silly addNamed semver.valid null
+106 silly addNamed semver.validRange >=0.1.22
+107 silly addNameRange { name: 'async', range: '>=0.1.22', hasData: false }
+108 silly mapToRegistry name async
+109 silly mapToRegistry using default registry
+110 silly mapToRegistry registry https://registry.npmjs.org/
+111 silly mapToRegistry uri https://registry.npmjs.org/async
+112 verbose addNameRange registry:https://registry.npmjs.org/async not in flight; fetching
+113 silly cache add args [ 'ref-struct@>= 0.0.5', null ]
+114 verbose cache add spec ref-struct@>= 0.0.5
+115 silly cache add parsed spec { raw: 'ref-struct@>= 0.0.5',
+115 silly cache add   scope: null,
+115 silly cache add   name: 'ref-struct',
+115 silly cache add   rawSpec: '>= 0.0.5',
+115 silly cache add   spec: '>=0.0.5',
+115 silly cache add   type: 'range' }
+116 verbose addNamed ref-struct@>=0.0.5
+117 silly addNamed semver.valid null
+118 silly addNamed semver.validRange >=0.0.5
+119 silly addNameRange { name: 'ref-struct', range: '>=0.0.5', hasData: false }
+120 silly mapToRegistry name ref-struct
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry https://registry.npmjs.org/
+123 silly mapToRegistry uri https://registry.npmjs.org/ref-struct
+124 verbose addNameRange registry:https://registry.npmjs.org/ref-struct not in flight; fetching
+125 silly cache add args [ 'ref@>= 0.1.3', null ]
+126 verbose cache add spec ref@>= 0.1.3
+127 silly cache add parsed spec { raw: 'ref@>= 0.1.3',
+127 silly cache add   scope: null,
+127 silly cache add   name: 'ref',
+127 silly cache add   rawSpec: '>= 0.1.3',
+127 silly cache add   spec: '>=0.1.3',
+127 silly cache add   type: 'range' }
+128 verbose addNamed ref@>=0.1.3
+129 silly addNamed semver.valid null
+130 silly addNamed semver.validRange >=0.1.3
+131 silly addNameRange { name: 'ref', range: '>=0.1.3', hasData: false }
+132 silly mapToRegistry name ref
+133 silly mapToRegistry using default registry
+134 silly mapToRegistry registry https://registry.npmjs.org/
+135 silly mapToRegistry uri https://registry.npmjs.org/ref
+136 verbose addNameRange registry:https://registry.npmjs.org/ref not in flight; fetching
+137 verbose request uri https://registry.npmjs.org/assert
+138 verbose request no auth needed
+139 info attempt registry request try #1 at 18:51:16
+140 http request GET https://registry.npmjs.org/assert
+141 verbose request uri https://registry.npmjs.org/async
+142 verbose request no auth needed
+143 info attempt registry request try #1 at 18:51:16
+144 http request GET https://registry.npmjs.org/async
+145 verbose request uri https://registry.npmjs.org/ref-struct
+146 verbose request no auth needed
+147 info attempt registry request try #1 at 18:51:16
+148 http request GET https://registry.npmjs.org/ref-struct
+149 verbose request uri https://registry.npmjs.org/ref
+150 verbose request no auth needed
+151 info attempt registry request try #1 at 18:51:16
+152 http request GET https://registry.npmjs.org/ref
+153 http 200 https://registry.npmjs.org/assert
+154 silly get cb [ 200,
+154 silly get   { date: 'Thu, 23 Apr 2015 15:51:35 GMT',
+154 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+154 silly get     etag: '"9EE23KYZ6RH2LR6W8L9BN5H3C"',
+154 silly get     'content-type': 'application/json',
+154 silly get     'cache-control': 'max-age=60',
+154 silly get     'content-length': '12728',
+154 silly get     'accept-ranges': 'bytes',
+154 silly get     via: '1.1 varnish',
+154 silly get     age: '40',
+154 silly get     'x-served-by': 'cache-ams4133-AMS',
+154 silly get     'x-cache': 'HIT',
+154 silly get     'x-cache-hits': '2',
+154 silly get     'x-timer': 'S1429804295.710760,VS0,VE0',
+154 silly get     vary: 'Accept',
+154 silly get     'keep-alive': 'timeout=10, max=50',
+154 silly get     connection: 'Keep-Alive' } ]
+155 verbose get saving assert to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\assert\.cache.json
+156 silly addNameRange number 2 { name: 'assert', range: '>=0.4.9', hasData: true }
+157 silly addNameRange versions [ 'assert',
+157 silly addNameRange   [ '0.4.9',
+157 silly addNameRange     '1.0.0',
+157 silly addNameRange     '1.0.1',
+157 silly addNameRange     '1.0.2',
+157 silly addNameRange     '1.0.3',
+157 silly addNameRange     '1.1.0',
+157 silly addNameRange     '1.1.1',
+157 silly addNameRange     '1.1.2',
+157 silly addNameRange     '1.2.0',
+157 silly addNameRange     '1.3.0' ] ]
+158 verbose addNamed assert@1.3.0
+159 silly addNamed semver.valid 1.3.0
+160 silly addNamed semver.validRange 1.3.0
+161 silly mapToRegistry name assert
+162 silly mapToRegistry using default registry
+163 silly mapToRegistry registry https://registry.npmjs.org/
+164 silly mapToRegistry uri https://registry.npmjs.org/assert
+165 verbose addRemoteTarball https://registry.npmjs.org/assert/-/assert-1.3.0.tgz not in flight; adding
+166 verbose addRemoteTarball [ 'https://registry.npmjs.org/assert/-/assert-1.3.0.tgz',
+166 verbose addRemoteTarball   '03939a622582a812cc202320a0b9a56c9b815849' ]
+167 info retry fetch attempt 1 at 18:51:17
+168 info attempt registry request try #1 at 18:51:17
+169 http fetch GET https://registry.npmjs.org/assert/-/assert-1.3.0.tgz
+170 http 200 https://registry.npmjs.org/async
+171 silly get cb [ 200,
+171 silly get   { date: 'Thu, 23 Apr 2015 15:51:35 GMT',
+171 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+171 silly get     etag: '"A47P7UNQ5XEAU8XZEC1T0WOLK"',
+171 silly get     'content-type': 'application/json',
+171 silly get     'cache-control': 'max-age=60',
+171 silly get     'content-length': '101965',
+171 silly get     'accept-ranges': 'bytes',
+171 silly get     via: '1.1 varnish',
+171 silly get     age: '5',
+171 silly get     'x-served-by': 'cache-ams4126-AMS',
+171 silly get     'x-cache': 'HIT',
+171 silly get     'x-cache-hits': '1',
+171 silly get     'x-timer': 'S1429804295.735683,VS0,VE0',
+171 silly get     vary: 'Accept',
+171 silly get     'keep-alive': 'timeout=10, max=50',
+171 silly get     connection: 'Keep-Alive' } ]
+172 verbose get saving async to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\async\.cache.json
+173 silly addNameRange number 2 { name: 'async', range: '>=0.1.22', hasData: true }
+174 silly addNameRange versions [ 'async',
+174 silly addNameRange   [ '0.1.0',
+174 silly addNameRange     '0.1.1',
+174 silly addNameRange     '0.1.2',
+174 silly addNameRange     '0.1.3',
+174 silly addNameRange     '0.1.4',
+174 silly addNameRange     '0.1.5',
+174 silly addNameRange     '0.1.6',
+174 silly addNameRange     '0.1.7',
+174 silly addNameRange     '0.1.8',
+174 silly addNameRange     '0.1.9',
+174 silly addNameRange     '0.1.10',
+174 silly addNameRange     '0.1.11',
+174 silly addNameRange     '0.1.12',
+174 silly addNameRange     '0.1.13',
+174 silly addNameRange     '0.1.14',
+174 silly addNameRange     '0.1.15',
+174 silly addNameRange     '0.1.16',
+174 silly addNameRange     '0.1.17',
+174 silly addNameRange     '0.1.18',
+174 silly addNameRange     '0.1.19',
+174 silly addNameRange     '0.1.20',
+174 silly addNameRange     '0.1.21',
+174 silly addNameRange     '0.1.22',
+174 silly addNameRange     '0.2.0',
+174 silly addNameRange     '0.2.1',
+174 silly addNameRange     '0.2.2',
+174 silly addNameRange     '0.2.3',
+174 silly addNameRange     '0.2.4',
+174 silly addNameRange     '0.2.5',
+174 silly addNameRange     '0.2.6',
+174 silly addNameRange     '0.2.7',
+174 silly addNameRange     '0.2.8',
+174 silly addNameRange     '0.2.9',
+174 silly addNameRange     '0.2.10',
+174 silly addNameRange     '0.3.0',
+174 silly addNameRange     '0.4.0',
+174 silly addNameRange     '0.4.1',
+174 silly addNameRange     '0.5.0',
+174 silly addNameRange     '0.6.0',
+174 silly addNameRange     '0.6.1',
+174 silly addNameRange     '0.6.2',
+174 silly addNameRange     '0.7.0',
+174 silly addNameRange     '0.8.0',
+174 silly addNameRange     '0.9.0' ] ]
+175 verbose addNamed async@0.9.0
+176 silly addNamed semver.valid 0.9.0
+177 silly addNamed semver.validRange 0.9.0
+178 silly mapToRegistry name async
+179 silly mapToRegistry using default registry
+180 silly mapToRegistry registry https://registry.npmjs.org/
+181 silly mapToRegistry uri https://registry.npmjs.org/async
+182 verbose addRemoteTarball https://registry.npmjs.org/async/-/async-0.9.0.tgz not in flight; adding
+183 verbose addRemoteTarball [ 'https://registry.npmjs.org/async/-/async-0.9.0.tgz',
+183 verbose addRemoteTarball   'ac3613b1da9bed1b47510bb4651b8931e47146c7' ]
+184 info retry fetch attempt 1 at 18:51:17
+185 info attempt registry request try #1 at 18:51:17
+186 http fetch GET https://registry.npmjs.org/async/-/async-0.9.0.tgz
+187 http fetch 200 https://registry.npmjs.org/assert/-/assert-1.3.0.tgz
+188 silly fetchAndShaCheck shasum 03939a622582a812cc202320a0b9a56c9b815849
+189 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\assert\-\assert-1.3.0.tgz not in flight; adding
+190 verbose addTmpTarball already have metadata; skipping unpack for assert@1.3.0
+191 silly cache afterAdd assert@1.3.0
+192 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\assert\1.3.0\package\package.json not in flight; writing
+193 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\assert\1.3.0\package\package.json written
+194 http 200 https://registry.npmjs.org/ref-struct
+195 silly get cb [ 200,
+195 silly get   { date: 'Thu, 23 Apr 2015 15:51:36 GMT',
+195 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+195 silly get     etag: '"CYBFTKO6SP637RU9BDHJ5ND3H"',
+195 silly get     'content-type': 'application/json',
+195 silly get     'cache-control': 'max-age=60',
+195 silly get     'content-length': '13984',
+195 silly get     'accept-ranges': 'bytes',
+195 silly get     via: '1.1 varnish',
+195 silly get     age: '0',
+195 silly get     'x-served-by': 'cache-ams4139-AMS',
+195 silly get     'x-cache': 'HIT',
+195 silly get     'x-cache-hits': '1',
+195 silly get     'x-timer': 'S1429804295.715295,VS0,VE380',
+195 silly get     vary: 'Accept',
+195 silly get     'keep-alive': 'timeout=10, max=50',
+195 silly get     connection: 'Keep-Alive' } ]
+196 verbose get saving ref-struct to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\ref-struct\.cache.json
+197 silly addNameRange number 2 { name: 'ref-struct', range: '>=0.0.5', hasData: true }
+198 silly addNameRange versions [ 'ref-struct',
+198 silly addNameRange   [ '0.0.1',
+198 silly addNameRange     '0.0.2',
+198 silly addNameRange     '0.0.3',
+198 silly addNameRange     '0.0.4',
+198 silly addNameRange     '0.0.5',
+198 silly addNameRange     '0.0.6',
+198 silly addNameRange     '0.0.7',
+198 silly addNameRange     '1.0.0',
+198 silly addNameRange     '1.0.1' ] ]
+199 verbose addNamed ref-struct@1.0.1
+200 silly addNamed semver.valid 1.0.1
+201 silly addNamed semver.validRange 1.0.1
+202 silly mapToRegistry name ref-struct
+203 silly mapToRegistry using default registry
+204 silly mapToRegistry registry https://registry.npmjs.org/
+205 silly mapToRegistry uri https://registry.npmjs.org/ref-struct
+206 verbose addRemoteTarball https://registry.npmjs.org/ref-struct/-/ref-struct-1.0.1.tgz not in flight; adding
+207 verbose addRemoteTarball [ 'https://registry.npmjs.org/ref-struct/-/ref-struct-1.0.1.tgz',
+207 verbose addRemoteTarball   'cc193fa7287983518547c62f5784f02b2b496f5f' ]
+208 info retry fetch attempt 1 at 18:51:17
+209 info attempt registry request try #1 at 18:51:17
+210 http fetch GET https://registry.npmjs.org/ref-struct/-/ref-struct-1.0.1.tgz
+211 http 200 https://registry.npmjs.org/ref
+212 silly get cb [ 200,
+212 silly get   { date: 'Thu, 23 Apr 2015 15:51:36 GMT',
+212 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+212 silly get     etag: '"DIFYGVQA017XEB1XCDUKHZYA1"',
+212 silly get     'content-type': 'application/json',
+212 silly get     'cache-control': 'max-age=60',
+212 silly get     'content-length': '47121',
+212 silly get     'accept-ranges': 'bytes',
+212 silly get     via: '1.1 varnish',
+212 silly get     age: '0',
+212 silly get     'x-served-by': 'cache-ams4132-AMS',
+212 silly get     'x-cache': 'MISS',
+212 silly get     'x-cache-hits': '0',
+212 silly get     'x-timer': 'S1429804295.727018,VS0,VE382',
+212 silly get     vary: 'Accept',
+212 silly get     'keep-alive': 'timeout=10, max=50',
+212 silly get     connection: 'Keep-Alive' } ]
+213 verbose get saving ref to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\ref\.cache.json
+214 silly addNameRange number 2 { name: 'ref', range: '>=0.1.3', hasData: true }
+215 silly addNameRange versions [ 'ref',
+215 silly addNameRange   [ '0.0.1',
+215 silly addNameRange     '0.0.2',
+215 silly addNameRange     '0.0.3',
+215 silly addNameRange     '0.0.4',
+215 silly addNameRange     '0.0.5',
+215 silly addNameRange     '0.0.6',
+215 silly addNameRange     '0.0.7',
+215 silly addNameRange     '0.0.8',
+215 silly addNameRange     '0.0.9',
+215 silly addNameRange     '0.0.10',
+215 silly addNameRange     '0.0.11',
+215 silly addNameRange     '0.0.12',
+215 silly addNameRange     '0.0.13',
+215 silly addNameRange     '0.0.14',
+215 silly addNameRange     '0.0.15',
+215 silly addNameRange     '0.0.16',
+215 silly addNameRange     '0.0.17',
+215 silly addNameRange     '0.0.18',
+215 silly addNameRange     '0.0.19',
+215 silly addNameRange     '0.0.20',
+215 silly addNameRange     '0.1.0',
+215 silly addNameRange     '0.1.1',
+215 silly addNameRange     '0.1.2',
+215 silly addNameRange     '0.1.3',
+215 silly addNameRange     '0.2.0',
+215 silly addNameRange     '0.2.1',
+215 silly addNameRange     '0.2.2',
+215 silly addNameRange     '0.2.3',
+215 silly addNameRange     '0.3.0',
+215 silly addNameRange     '0.3.1',
+215 silly addNameRange     '0.3.2',
+215 silly addNameRange     '0.3.3',
+215 silly addNameRange     '0.3.4',
+215 silly addNameRange     '0.3.5',
+215 silly addNameRange     '1.0.0',
+215 silly addNameRange     '1.0.1' ] ]
+216 verbose addNamed ref@1.0.1
+217 silly addNamed semver.valid 1.0.1
+218 silly addNamed semver.validRange 1.0.1
+219 silly mapToRegistry name ref
+220 silly mapToRegistry using default registry
+221 silly mapToRegistry registry https://registry.npmjs.org/
+222 silly mapToRegistry uri https://registry.npmjs.org/ref
+223 verbose addRemoteTarball https://registry.npmjs.org/ref/-/ref-1.0.1.tgz not in flight; adding
+224 verbose addRemoteTarball [ 'https://registry.npmjs.org/ref/-/ref-1.0.1.tgz',
+224 verbose addRemoteTarball   '856020a2bfeb21787f70a7aab912a9227be85f73' ]
+225 info retry fetch attempt 1 at 18:51:17
+226 info attempt registry request try #1 at 18:51:17
+227 http fetch GET https://registry.npmjs.org/ref/-/ref-1.0.1.tgz
+228 http fetch 200 https://registry.npmjs.org/async/-/async-0.9.0.tgz
+229 silly fetchAndShaCheck shasum ac3613b1da9bed1b47510bb4651b8931e47146c7
+230 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\async\-\async-0.9.0.tgz not in flight; adding
+231 verbose addTmpTarball already have metadata; skipping unpack for async@0.9.0
+232 silly cache afterAdd async@0.9.0
+233 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\async\0.9.0\package\package.json not in flight; writing
+234 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\async\0.9.0\package\package.json written
+235 http fetch 200 https://registry.npmjs.org/ref-struct/-/ref-struct-1.0.1.tgz
+236 silly fetchAndShaCheck shasum cc193fa7287983518547c62f5784f02b2b496f5f
+237 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\ref-struct\-\ref-struct-1.0.1.tgz not in flight; adding
+238 verbose addTmpTarball already have metadata; skipping unpack for ref-struct@1.0.1
+239 silly cache afterAdd ref-struct@1.0.1
+240 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\ref-struct\1.0.1\package\package.json not in flight; writing
+241 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\ref-struct\1.0.1\package\package.json written
+242 http fetch 200 https://registry.npmjs.org/ref/-/ref-1.0.1.tgz
+243 silly fetchAndShaCheck shasum 856020a2bfeb21787f70a7aab912a9227be85f73
+244 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\ref\-\ref-1.0.1.tgz not in flight; adding
+245 verbose addTmpTarball already have metadata; skipping unpack for ref@1.0.1
+246 silly cache afterAdd ref@1.0.1
+247 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\ref\1.0.1\package\package.json not in flight; writing
+248 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\ref\1.0.1\package\package.json written
+249 silly install resolved [ { name: 'assert',
+249 silly install resolved     description: 'commonjs assert - node.js api compatible',
+249 silly install resolved     keywords: [ 'assert' ],
+249 silly install resolved     version: '1.3.0',
+249 silly install resolved     homepage: 'https://github.com/defunctzombie/commonjs-assert',
+249 silly install resolved     repository:
+249 silly install resolved      { type: 'git',
+249 silly install resolved        url: 'git://github.com/defunctzombie/commonjs-assert.git' },
+249 silly install resolved     main: './assert.js',
+249 silly install resolved     dependencies: { util: '0.10.3' },
+249 silly install resolved     devDependencies: { zuul: '~1.10.2', mocha: '~1.21.4' },
+249 silly install resolved     license: 'MIT',
+249 silly install resolved     scripts: { test: 'mocha --ui qunit test.js && zuul -- test.js' },
+249 silly install resolved     gitHead: 'cc3c9020e9ca440bdc431f92570d676dd8a89a3c',
+249 silly install resolved     bugs: { url: 'https://github.com/defunctzombie/commonjs-assert/issues' },
+249 silly install resolved     _id: 'assert@1.3.0',
+249 silly install resolved     _shasum: '03939a622582a812cc202320a0b9a56c9b815849',
+249 silly install resolved     _from: 'assert@>=0.4.9',
+249 silly install resolved     _npmVersion: '2.1.12',
+249 silly install resolved     _nodeVersion: '0.10.33',
+249 silly install resolved     _npmUser: { name: 'shtylman', email: 'shtylman@gmail.com' },
+249 silly install resolved     maintainers: [ [Object], [Object] ],
+249 silly install resolved     dist:
+249 silly install resolved      { shasum: '03939a622582a812cc202320a0b9a56c9b815849',
+249 silly install resolved        tarball: 'http://registry.npmjs.org/assert/-/assert-1.3.0.tgz' },
+249 silly install resolved     directories: {},
+249 silly install resolved     _resolved: 'https://registry.npmjs.org/assert/-/assert-1.3.0.tgz' },
+249 silly install resolved   { name: 'async',
+249 silly install resolved     description: 'Higher-order functions and common patterns for asynchronous code',
+249 silly install resolved     main: './lib/async',
+249 silly install resolved     author: { name: 'Caolan McMahon' },
+249 silly install resolved     version: '0.9.0',
+249 silly install resolved     repository: { type: 'git', url: 'https://github.com/caolan/async.git' },
+249 silly install resolved     bugs: { url: 'https://github.com/caolan/async/issues' },
+249 silly install resolved     licenses: [ [Object] ],
+249 silly install resolved     devDependencies: { nodeunit: '>0.0.0', 'uglify-js': '1.2.x', nodelint: '>0.0.0' },
+249 silly install resolved     jam: { main: 'lib/async.js', include: [Object] },
+249 silly install resolved     scripts: { test: 'nodeunit test/test-async.js' },
+249 silly install resolved     homepage: 'https://github.com/caolan/async',
+249 silly install resolved     _id: 'async@0.9.0',
+249 silly install resolved     dist:
+249 silly install resolved      { shasum: 'ac3613b1da9bed1b47510bb4651b8931e47146c7',
+249 silly install resolved        tarball: 'http://registry.npmjs.org/async/-/async-0.9.0.tgz' },
+249 silly install resolved     _from: 'async@>=0.1.22',
+249 silly install resolved     _npmVersion: '1.4.3',
+249 silly install resolved     _npmUser: { name: 'caolan', email: 'caolan.mcmahon@gmail.com' },
+249 silly install resolved     maintainers: [ [Object] ],
+249 silly install resolved     directories: {},
+249 silly install resolved     _shasum: 'ac3613b1da9bed1b47510bb4651b8931e47146c7',
+249 silly install resolved     _resolved: 'https://registry.npmjs.org/async/-/async-0.9.0.tgz' },
+249 silly install resolved   { name: 'ref-struct',
+249 silly install resolved     description: 'Create ABI-compliant "struct" instances on top of Buffers',
+249 silly install resolved     keywords: [ 'struct', 'ref', 'abi', 'c', 'c++', 'ffi' ],
+249 silly install resolved     version: '1.0.1',
+249 silly install resolved     author:
+249 silly install resolved      { name: 'Nathan Rajlich',
+249 silly install resolved        email: 'nathan@tootallnate.net',
+249 silly install resolved        url: 'http://tootallnate.net' },
+249 silly install resolved     repository:
+249 silly install resolved      { type: 'git',
+249 silly install resolved        url: 'git://github.com/TooTallNate/ref-struct.git' },
+249 silly install resolved     main: './lib/struct.js',
+249 silly install resolved     scripts: { test: 'node-gyp rebuild --directory test && mocha -gc --reporter spec' },
+249 silly install resolved     dependencies: { debug: '2', ref: '1' },
+249 silly install resolved     devDependencies:
+249 silly install resolved      { bindings: '~1.2.0',
+249 silly install resolved        nan: '~1.1.0',
+249 silly install resolved        mocha: '*',
+249 silly install resolved        'ref-array': '~0.0.3' },
+249 silly install resolved     gitHead: 'df4958ad378481f1087d686ec9431a198cf84c97',
+249 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/ref-struct/issues' },
+249 silly install resolved     homepage: 'https://github.com/TooTallNate/ref-struct',
+249 silly install resolved     _id: 'ref-struct@1.0.1',
+249 silly install resolved     _shasum: 'cc193fa7287983518547c62f5784f02b2b496f5f',
+249 silly install resolved     _from: 'ref-struct@>=0.0.5',
+249 silly install resolved     _npmVersion: '2.5.1',
+249 silly install resolved     _nodeVersion: '0.12.0',
+249 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+249 silly install resolved     maintainers: [ [Object] ],
+249 silly install resolved     dist:
+249 silly install resolved      { shasum: 'cc193fa7287983518547c62f5784f02b2b496f5f',
+249 silly install resolved        tarball: 'http://registry.npmjs.org/ref-struct/-/ref-struct-1.0.1.tgz' },
+249 silly install resolved     directories: {},
+249 silly install resolved     _resolved: 'https://registry.npmjs.org/ref-struct/-/ref-struct-1.0.1.tgz' },
+249 silly install resolved   { name: 'ref',
+249 silly install resolved     description: 'Turn Buffer instances into "pointers"',
+249 silly install resolved     keywords:
+249 silly install resolved      [ 'native',
+249 silly install resolved        'buffer',
+249 silly install resolved        'extensions',
+249 silly install resolved        'c++',
+249 silly install resolved        'pointer',
+249 silly install resolved        'reference',
+249 silly install resolved        'dereference',
+249 silly install resolved        'type',
+249 silly install resolved        'int',
+249 silly install resolved        'long',
+249 silly install resolved        'float',
+249 silly install resolved        'double',
+249 silly install resolved        'byte',
+249 silly install resolved        '64' ],
+249 silly install resolved     version: '1.0.1',
+249 silly install resolved     author:
+249 silly install resolved      { name: 'Nathan Rajlich',
+249 silly install resolved        email: 'nathan@tootallnate.net',
+249 silly install resolved        url: 'http://tootallnate.net' },
+249 silly install resolved     repository: { type: 'git', url: 'git://github.com/TooTallNate/ref.git' },
+249 silly install resolved     main: './lib/ref.js',
+249 silly install resolved     scripts:
+249 silly install resolved      { docs: 'node docs/compile',
+249 silly install resolved        test: 'mocha -gc --reporter spec',
+249 silly install resolved        install: 'node-gyp rebuild' },
+249 silly install resolved     dependencies: { bindings: '~1.2.0', debug: '2', nan: '~1.7.0' },
+249 silly install resolved     devDependencies:
+249 silly install resolved      { dox: '0.4.4',
+249 silly install resolved        'highlight.js': '1',
+249 silly install resolved        jade: '0.35.0',
+249 silly install resolved        marked: '0.3.2',
+249 silly install resolved        mocha: '*',
+249 silly install resolved        weak: '0.3.2' },
+249 silly install resolved     gypfile: true,
+249 silly install resolved     gitHead: '907869696da4634d32a44b48fc807be4b8de2c7f',
+249 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/ref/issues' },
+249 silly install resolved     homepage: 'https://github.com/TooTallNate/ref',
+249 silly install resolved     _id: 'ref@1.0.1',
+249 silly install resolved     _shasum: '856020a2bfeb21787f70a7aab912a9227be85f73',
+249 silly install resolved     _from: 'ref@>=0.1.3',
+249 silly install resolved     _npmVersion: '1.4.28',
+249 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+249 silly install resolved     maintainers: [ [Object] ],
+249 silly install resolved     dist:
+249 silly install resolved      { shasum: '856020a2bfeb21787f70a7aab912a9227be85f73',
+249 silly install resolved        tarball: 'http://registry.npmjs.org/ref/-/ref-1.0.1.tgz' },
+249 silly install resolved     directories: {},
+249 silly install resolved     _resolved: 'https://registry.npmjs.org/ref/-/ref-1.0.1.tgz' } ]
+250 info install assert@1.3.0 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+251 info install async@0.9.0 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+252 info install ref-struct@1.0.1 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+253 info install ref@1.0.1 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+254 info installOne assert@1.3.0
+255 verbose installOne of assert to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole not in flight; installing
+256 info installOne async@0.9.0
+257 verbose installOne of async to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole not in flight; installing
+258 info installOne ref-struct@1.0.1
+259 verbose installOne of ref-struct to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole not in flight; installing
+260 info installOne ref@1.0.1
+261 verbose installOne of ref to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole not in flight; installing
+262 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ref-struct-13a4c65ef81ea935.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+263 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ref-06a608415f529474.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+264 silly install write writing ref-struct 1.0.1 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+265 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\async-9b20baf5fa18e3ff.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+266 silly install write writing ref 1.0.1 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+267 silly install write writing async 0.9.0 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+268 silly cache addNamed cb ref-struct@1.0.1
+269 verbose unbuild node_modules\win32ole\node_modules\ref-struct
+270 silly cache addNamed cb ref@1.0.1
+271 verbose unbuild node_modules\win32ole\node_modules\ref
+272 silly cache addNamed cb async@0.9.0
+273 verbose unbuild node_modules\win32ole\node_modules\async
+274 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+275 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+276 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\ref-struct\1.0.1\package.tgz
+277 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+278 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+279 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+280 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\ref\1.0.1\package.tgz
+281 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+282 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+283 silly gunzTarPerm modes [ '777', '666' ]
+284 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\async\0.9.0\package.tgz
+285 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+286 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+287 silly gunzTarPerm modes [ '777', '666' ]
+288 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\assert-8672681c97d30fce.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+289 silly gunzTarPerm modes [ '777', '666' ]
+290 silly install write writing assert 1.3.0 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+291 silly gunzTarPerm extractEntry package.json
+292 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+293 silly cache addNamed cb assert@1.3.0
+294 verbose unbuild node_modules\win32ole\node_modules\assert
+295 silly gunzTarPerm extractEntry package.json
+296 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+297 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+298 silly gunzTarPerm extractEntry .npmignore
+299 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+300 silly gunzTarPerm extractEntry README.md
+301 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+302 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\assert\1.3.0\package.tgz
+303 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+304 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+305 silly gunzTarPerm extractEntry package.json
+306 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+307 silly gunzTarPerm modes [ '777', '666' ]
+308 silly gunzTarPerm extractEntry README.md
+309 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+310 silly gunzTarPerm extractEntry LICENSE
+311 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+312 silly gunzTarPerm extractEntry .travis.yml
+313 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+314 silly gunzTarPerm extractEntry component.json
+315 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+316 silly gunzTarPerm extractEntry lib/async.js
+317 silly gunzTarPerm modified mode [ 'lib/async.js', 493, 511 ]
+318 silly gunzTarPerm extractEntry .npmignore
+319 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+320 silly gunzTarPerm extractEntry README.md
+321 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+322 silly gunzTarPerm extractEntry .jshintrc
+323 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+324 silly gunzTarPerm extractEntry .travis.yml
+325 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+326 silly gunzTarPerm extractEntry package.json
+327 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+328 silly gunzTarPerm extractEntry binding.gyp
+329 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 438 ]
+330 silly gunzTarPerm extractEntry appveyor.yml
+331 silly gunzTarPerm modified mode [ 'appveyor.yml', 420, 438 ]
+332 silly gunzTarPerm extractEntry History.md
+333 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+334 silly gunzTarPerm extractEntry appveyor.yml
+335 silly gunzTarPerm modified mode [ 'appveyor.yml', 420, 438 ]
+336 silly gunzTarPerm extractEntry .npmignore
+337 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+338 silly gunzTarPerm extractEntry README.md
+339 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+340 silly gunzTarPerm extractEntry .travis.yml
+341 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+342 silly gunzTarPerm extractEntry docs/compile.js
+343 silly gunzTarPerm modified mode [ 'docs/compile.js', 420, 438 ]
+344 silly gunzTarPerm extractEntry LICENSE
+345 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+346 silly gunzTarPerm extractEntry assert.js
+347 silly gunzTarPerm modified mode [ 'assert.js', 420, 438 ]
+348 silly gunzTarPerm extractEntry lib/struct.js
+349 silly gunzTarPerm modified mode [ 'lib/struct.js', 420, 438 ]
+350 silly gunzTarPerm extractEntry test.js
+351 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+352 silly gunzTarPerm extractEntry docs/gh-pages.sh
+353 silly gunzTarPerm modified mode [ 'docs/gh-pages.sh', 493, 511 ]
+354 silly gunzTarPerm extractEntry .travis.yml
+355 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+356 silly gunzTarPerm extractEntry .zuul.yml
+357 silly gunzTarPerm modified mode [ '.zuul.yml', 420, 438 ]
+358 silly gunzTarPerm extractEntry docs/images/apple-touch-icon-114x114.png
+359 silly gunzTarPerm modified mode [ 'docs/images/apple-touch-icon-114x114.png', 420, 438 ]
+360 silly gunzTarPerm extractEntry docs/images/apple-touch-icon-72x72.png
+361 silly gunzTarPerm modified mode [ 'docs/images/apple-touch-icon-72x72.png', 420, 438 ]
+362 silly gunzTarPerm extractEntry docs/images/apple-touch-icon.png
+363 silly gunzTarPerm modified mode [ 'docs/images/apple-touch-icon.png', 420, 438 ]
+364 silly gunzTarPerm extractEntry docs/images/favicon.ico
+365 silly gunzTarPerm modified mode [ 'docs/images/favicon.ico', 420, 438 ]
+366 silly gunzTarPerm extractEntry docs/images/ref.pxm
+367 silly gunzTarPerm modified mode [ 'docs/images/ref.pxm', 420, 438 ]
+368 silly gunzTarPerm extractEntry docs/index.jade
+369 silly gunzTarPerm modified mode [ 'docs/index.jade', 420, 438 ]
+370 silly gunzTarPerm extractEntry docs/scripts/jquery-1.7.2.min.js
+371 silly gunzTarPerm modified mode [ 'docs/scripts/jquery-1.7.2.min.js', 420, 438 ]
+372 silly gunzTarPerm extractEntry docs/scripts/main.js
+373 silly gunzTarPerm modified mode [ 'docs/scripts/main.js', 420, 438 ]
+374 silly gunzTarPerm extractEntry docs/stylesheets/base.css
+375 silly gunzTarPerm modified mode [ 'docs/stylesheets/base.css', 420, 438 ]
+376 silly gunzTarPerm extractEntry docs/stylesheets/layout.css
+377 silly gunzTarPerm modified mode [ 'docs/stylesheets/layout.css', 420, 438 ]
+378 info preinstall ref-struct@1.0.1
+379 silly prepareForInstallMany adding debug@2 from ref-struct dependencies
+380 silly cache add args [ 'debug@2', null ]
+381 verbose cache add spec debug@2
+382 silly cache add parsed spec { raw: 'debug@2',
+382 silly cache add   scope: null,
+382 silly cache add   name: 'debug',
+382 silly cache add   rawSpec: '2',
+382 silly cache add   spec: '>=2.0.0 <3.0.0',
+382 silly cache add   type: 'range' }
+383 verbose addNamed debug@>=2.0.0 <3.0.0
+384 silly addNamed semver.valid null
+385 silly addNamed semver.validRange >=2.0.0 <3.0.0
+386 silly addNameRange { name: 'debug', range: '>=2.0.0 <3.0.0', hasData: false }
+387 silly mapToRegistry name debug
+388 silly mapToRegistry using default registry
+389 silly mapToRegistry registry https://registry.npmjs.org/
+390 silly mapToRegistry uri https://registry.npmjs.org/debug
+391 verbose addNameRange registry:https://registry.npmjs.org/debug not in flight; fetching
+392 verbose request uri https://registry.npmjs.org/debug
+393 verbose request no auth needed
+394 info attempt registry request try #1 at 18:51:18
+395 http request GET https://registry.npmjs.org/debug
+396 silly gunzTarPerm extractEntry docs/stylesheets/skeleton.css
+397 silly gunzTarPerm modified mode [ 'docs/stylesheets/skeleton.css', 420, 438 ]
+398 silly gunzTarPerm extractEntry lib/ref.js
+399 silly gunzTarPerm modified mode [ 'lib/ref.js', 420, 438 ]
+400 silly gunzTarPerm extractEntry src/binding.cc
+401 silly gunzTarPerm modified mode [ 'src/binding.cc', 420, 438 ]
+402 silly gunzTarPerm extractEntry History.md
+403 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+404 silly gunzTarPerm extractEntry test/address.js
+405 silly gunzTarPerm modified mode [ 'test/address.js', 420, 438 ]
+406 silly gunzTarPerm extractEntry test/coerce.js
+407 silly gunzTarPerm modified mode [ 'test/coerce.js', 420, 438 ]
+408 silly gunzTarPerm extractEntry test/int64.js
+409 silly gunzTarPerm modified mode [ 'test/int64.js', 420, 438 ]
+410 silly gunzTarPerm extractEntry test/isNull.js
+411 silly gunzTarPerm modified mode [ 'test/isNull.js', 420, 438 ]
+412 silly gunzTarPerm extractEntry test/char.js
+413 silly gunzTarPerm modified mode [ 'test/char.js', 420, 438 ]
+414 silly gunzTarPerm extractEntry test/pointer.js
+415 silly gunzTarPerm modified mode [ 'test/pointer.js', 420, 438 ]
+416 silly gunzTarPerm extractEntry test/ref-deref.js
+417 silly gunzTarPerm modified mode [ 'test/ref-deref.js', 420, 438 ]
+418 silly gunzTarPerm extractEntry test/reinterpret.js
+419 silly gunzTarPerm modified mode [ 'test/reinterpret.js', 420, 438 ]
+420 silly gunzTarPerm extractEntry test/reinterpretUntilZeros.js
+421 silly gunzTarPerm modified mode [ 'test/reinterpretUntilZeros.js', 420, 438 ]
+422 silly gunzTarPerm extractEntry test/string.js
+423 silly gunzTarPerm modified mode [ 'test/string.js', 420, 438 ]
+424 silly gunzTarPerm extractEntry test/bool.js
+425 silly gunzTarPerm modified mode [ 'test/bool.js', 420, 438 ]
+426 silly gunzTarPerm extractEntry test/types.js
+427 silly gunzTarPerm modified mode [ 'test/types.js', 420, 438 ]
+428 silly gunzTarPerm extractEntry test/alloc.js
+429 silly gunzTarPerm modified mode [ 'test/alloc.js', 420, 438 ]
+430 silly gunzTarPerm extractEntry test/object.js
+431 silly gunzTarPerm modified mode [ 'test/object.js', 420, 438 ]
+432 silly gunzTarPerm extractEntry test/utf16le.bin
+433 silly gunzTarPerm modified mode [ 'test/utf16le.bin', 420, 438 ]
+434 info preinstall assert@1.3.0
+435 silly prepareForInstallMany adding util@0.10.3 from assert dependencies
+436 silly cache add args [ 'util@0.10.3', null ]
+437 verbose cache add spec util@0.10.3
+438 silly cache add parsed spec { raw: 'util@0.10.3',
+438 silly cache add   scope: null,
+438 silly cache add   name: 'util',
+438 silly cache add   rawSpec: '0.10.3',
+438 silly cache add   spec: '0.10.3',
+438 silly cache add   type: 'version' }
+439 verbose addNamed util@0.10.3
+440 silly addNamed semver.valid 0.10.3
+441 silly addNamed semver.validRange 0.10.3
+442 silly mapToRegistry name util
+443 silly mapToRegistry using default registry
+444 silly mapToRegistry registry https://registry.npmjs.org/
+445 silly mapToRegistry uri https://registry.npmjs.org/util
+446 verbose addNameVersion registry:https://registry.npmjs.org/util not in flight; fetching
+447 verbose request uri https://registry.npmjs.org/util
+448 verbose request no auth needed
+449 info attempt registry request try #1 at 18:51:18
+450 http request GET https://registry.npmjs.org/util
+451 info preinstall async@0.9.0
+452 silly install resolved []
+453 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+454 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+455 verbose linkStuff [ false,
+455 verbose linkStuff   false,
+455 verbose linkStuff   false,
+455 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules' ]
+456 info linkStuff async@0.9.0
+457 verbose linkBins async@0.9.0
+458 verbose linkMans async@0.9.0
+459 verbose rebuildBundles async@0.9.0
+460 info install async@0.9.0
+461 info postinstall async@0.9.0
+462 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\async-9b20baf5fa18e3ff.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\async
+463 info preinstall ref@1.0.1
+464 silly prepareForInstallMany adding bindings@~1.2.0 from ref dependencies
+465 silly prepareForInstallMany adding debug@2 from ref dependencies
+466 silly prepareForInstallMany adding nan@~1.7.0 from ref dependencies
+467 silly cache add args [ 'bindings@~1.2.0', null ]
+468 verbose cache add spec bindings@~1.2.0
+469 silly cache add args [ 'debug@2', null ]
+470 verbose cache add spec debug@2
+471 silly cache add parsed spec { raw: 'bindings@~1.2.0',
+471 silly cache add   scope: null,
+471 silly cache add   name: 'bindings',
+471 silly cache add   rawSpec: '~1.2.0',
+471 silly cache add   spec: '>=1.2.0 <1.3.0',
+471 silly cache add   type: 'range' }
+472 verbose addNamed bindings@>=1.2.0 <1.3.0
+473 silly addNamed semver.valid null
+474 silly addNamed semver.validRange >=1.2.0 <1.3.0
+475 silly addNameRange { name: 'bindings', range: '>=1.2.0 <1.3.0', hasData: false }
+476 silly mapToRegistry name bindings
+477 silly mapToRegistry using default registry
+478 silly mapToRegistry registry https://registry.npmjs.org/
+479 silly mapToRegistry uri https://registry.npmjs.org/bindings
+480 verbose addNameRange registry:https://registry.npmjs.org/bindings not in flight; fetching
+481 silly cache add parsed spec { raw: 'debug@2',
+481 silly cache add   scope: null,
+481 silly cache add   name: 'debug',
+481 silly cache add   rawSpec: '2',
+481 silly cache add   spec: '>=2.0.0 <3.0.0',
+481 silly cache add   type: 'range' }
+482 verbose addNamed debug@>=2.0.0 <3.0.0
+483 silly addNamed semver.valid null
+484 silly addNamed semver.validRange >=2.0.0 <3.0.0
+485 silly addNameRange { name: 'debug', range: '>=2.0.0 <3.0.0', hasData: false }
+486 silly mapToRegistry name debug
+487 silly mapToRegistry using default registry
+488 silly mapToRegistry registry https://registry.npmjs.org/
+489 silly mapToRegistry uri https://registry.npmjs.org/debug
+490 verbose addNameRange registry:https://registry.npmjs.org/debug already in flight; waiting
+491 silly cache add args [ 'nan@~1.7.0', null ]
+492 verbose cache add spec nan@~1.7.0
+493 silly cache add parsed spec { raw: 'nan@~1.7.0',
+493 silly cache add   scope: null,
+493 silly cache add   name: 'nan',
+493 silly cache add   rawSpec: '~1.7.0',
+493 silly cache add   spec: '>=1.7.0 <1.8.0',
+493 silly cache add   type: 'range' }
+494 verbose addNamed nan@>=1.7.0 <1.8.0
+495 silly addNamed semver.valid null
+496 silly addNamed semver.validRange >=1.7.0 <1.8.0
+497 silly addNameRange { name: 'nan', range: '>=1.7.0 <1.8.0', hasData: false }
+498 silly mapToRegistry name nan
+499 silly mapToRegistry using default registry
+500 silly mapToRegistry registry https://registry.npmjs.org/
+501 silly mapToRegistry uri https://registry.npmjs.org/nan
+502 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+503 verbose request uri https://registry.npmjs.org/bindings
+504 verbose request no auth needed
+505 info attempt registry request try #1 at 18:51:18
+506 http request GET https://registry.npmjs.org/bindings
+507 verbose request uri https://registry.npmjs.org/nan
+508 verbose request no auth needed
+509 info attempt registry request try #1 at 18:51:18
+510 http request GET https://registry.npmjs.org/nan
+511 http 200 https://registry.npmjs.org/util
+512 silly get cb [ 200,
+512 silly get   { date: 'Thu, 23 Apr 2015 15:51:37 GMT',
+512 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+512 silly get     etag: '"2JBBL63MUQ89TTQ7JV1BTZBPA"',
+512 silly get     'content-type': 'application/json',
+512 silly get     'cache-control': 'max-age=60',
+512 silly get     'content-length': '6090',
+512 silly get     'accept-ranges': 'bytes',
+512 silly get     via: '1.1 varnish',
+512 silly get     age: '44',
+512 silly get     'x-served-by': 'cache-ams4145-AMS',
+512 silly get     'x-cache': 'HIT',
+512 silly get     'x-cache-hits': '1',
+512 silly get     'x-timer': 'S1429804297.427185,VS0,VE0',
+512 silly get     vary: 'Accept',
+512 silly get     'keep-alive': 'timeout=10, max=50',
+512 silly get     connection: 'Keep-Alive' } ]
+513 verbose get saving util to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\util\.cache.json
+514 silly mapToRegistry name util
+515 silly mapToRegistry using default registry
+516 silly mapToRegistry registry https://registry.npmjs.org/
+517 silly mapToRegistry uri https://registry.npmjs.org/util
+518 verbose addRemoteTarball https://registry.npmjs.org/util/-/util-0.10.3.tgz not in flight; adding
+519 verbose addRemoteTarball [ 'https://registry.npmjs.org/util/-/util-0.10.3.tgz',
+519 verbose addRemoteTarball   '7afb1afe50805246489e3db7fe0ed379336ac0f9' ]
+520 info retry fetch attempt 1 at 18:51:18
+521 info attempt registry request try #1 at 18:51:18
+522 http fetch GET https://registry.npmjs.org/util/-/util-0.10.3.tgz
+523 http 200 https://registry.npmjs.org/debug
+524 silly get cb [ 200,
+524 silly get   { date: 'Thu, 23 Apr 2015 15:51:37 GMT',
+524 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+524 silly get     etag: '"9UGFCKTLQW9DOGUV5W8AV0W6S"',
+524 silly get     'content-type': 'application/json',
+524 silly get     'cache-control': 'max-age=60',
+524 silly get     'content-length': '32953',
+524 silly get     'accept-ranges': 'bytes',
+524 silly get     via: '1.1 varnish',
+524 silly get     age: '12',
+524 silly get     'x-served-by': 'cache-ams4146-AMS',
+524 silly get     'x-cache': 'HIT',
+524 silly get     'x-cache-hits': '2',
+524 silly get     'x-timer': 'S1429804297.411256,VS0,VE0',
+524 silly get     vary: 'Accept',
+524 silly get     'keep-alive': 'timeout=10, max=50',
+524 silly get     connection: 'Keep-Alive' } ]
+525 verbose get saving debug to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\debug\.cache.json
+526 silly addNameRange number 2 { name: 'debug', range: '>=2.0.0 <3.0.0', hasData: true }
+527 silly addNameRange versions [ 'debug',
+527 silly addNameRange   [ '0.0.1',
+527 silly addNameRange     '0.1.0',
+527 silly addNameRange     '0.2.0',
+527 silly addNameRange     '0.3.0',
+527 silly addNameRange     '0.4.0',
+527 silly addNameRange     '0.4.1',
+527 silly addNameRange     '0.5.0',
+527 silly addNameRange     '0.6.0',
+527 silly addNameRange     '0.7.0',
+527 silly addNameRange     '0.7.1',
+527 silly addNameRange     '0.7.2',
+527 silly addNameRange     '0.7.3',
+527 silly addNameRange     '0.7.4',
+527 silly addNameRange     '0.8.0',
+527 silly addNameRange     '0.8.1',
+527 silly addNameRange     '1.0.0',
+527 silly addNameRange     '1.0.1',
+527 silly addNameRange     '1.0.2',
+527 silly addNameRange     '1.0.3',
+527 silly addNameRange     '1.0.4',
+527 silly addNameRange     '2.0.0',
+527 silly addNameRange     '2.1.0',
+527 silly addNameRange     '2.1.1',
+527 silly addNameRange     '2.1.2',
+527 silly addNameRange     '2.1.3' ] ]
+528 verbose addNamed debug@2.1.3
+529 silly addNamed semver.valid 2.1.3
+530 silly addNamed semver.validRange 2.1.3
+531 silly addNameRange number 2 { name: 'debug', range: '>=2.0.0 <3.0.0', hasData: true }
+532 silly addNameRange versions [ 'debug',
+532 silly addNameRange   [ '0.0.1',
+532 silly addNameRange     '0.1.0',
+532 silly addNameRange     '0.2.0',
+532 silly addNameRange     '0.3.0',
+532 silly addNameRange     '0.4.0',
+532 silly addNameRange     '0.4.1',
+532 silly addNameRange     '0.5.0',
+532 silly addNameRange     '0.6.0',
+532 silly addNameRange     '0.7.0',
+532 silly addNameRange     '0.7.1',
+532 silly addNameRange     '0.7.2',
+532 silly addNameRange     '0.7.3',
+532 silly addNameRange     '0.7.4',
+532 silly addNameRange     '0.8.0',
+532 silly addNameRange     '0.8.1',
+532 silly addNameRange     '1.0.0',
+532 silly addNameRange     '1.0.1',
+532 silly addNameRange     '1.0.2',
+532 silly addNameRange     '1.0.3',
+532 silly addNameRange     '1.0.4',
+532 silly addNameRange     '2.0.0',
+532 silly addNameRange     '2.1.0',
+532 silly addNameRange     '2.1.1',
+532 silly addNameRange     '2.1.2',
+532 silly addNameRange     '2.1.3' ] ]
+533 verbose addNamed debug@2.1.3
+534 silly addNamed semver.valid 2.1.3
+535 silly addNamed semver.validRange 2.1.3
+536 silly mapToRegistry name debug
+537 silly mapToRegistry using default registry
+538 silly mapToRegistry registry https://registry.npmjs.org/
+539 silly mapToRegistry uri https://registry.npmjs.org/debug
+540 verbose addRemoteTarball https://registry.npmjs.org/debug/-/debug-2.1.3.tgz not in flight; adding
+541 verbose addRemoteTarball [ 'https://registry.npmjs.org/debug/-/debug-2.1.3.tgz',
+541 verbose addRemoteTarball   'ce8ab1b5ee8fbee2bfa3b633cab93d366b63418e' ]
+542 silly mapToRegistry name debug
+543 silly mapToRegistry using default registry
+544 silly mapToRegistry registry https://registry.npmjs.org/
+545 silly mapToRegistry uri https://registry.npmjs.org/debug
+546 verbose addRemoteTarball https://registry.npmjs.org/debug/-/debug-2.1.3.tgz already in flight; waiting
+547 info retry fetch attempt 1 at 18:51:18
+548 info attempt registry request try #1 at 18:51:18
+549 http fetch GET https://registry.npmjs.org/debug/-/debug-2.1.3.tgz
+550 http fetch 200 https://registry.npmjs.org/util/-/util-0.10.3.tgz
+551 silly fetchAndShaCheck shasum 7afb1afe50805246489e3db7fe0ed379336ac0f9
+552 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\util\-\util-0.10.3.tgz not in flight; adding
+553 verbose addTmpTarball already have metadata; skipping unpack for util@0.10.3
+554 silly cache afterAdd util@0.10.3
+555 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\util\0.10.3\package\package.json not in flight; writing
+556 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\util\0.10.3\package\package.json written
+557 silly install resolved [ { author: { name: 'Joyent', url: 'http://www.joyent.com' },
+557 silly install resolved     name: 'util',
+557 silly install resolved     description: 'Node.JS util module',
+557 silly install resolved     keywords: [ 'util' ],
+557 silly install resolved     version: '0.10.3',
+557 silly install resolved     homepage: 'https://github.com/defunctzombie/node-util',
+557 silly install resolved     repository: { type: 'git', url: 'git://github.com/defunctzombie/node-util' },
+557 silly install resolved     main: './util.js',
+557 silly install resolved     scripts: { test: 'node test/node/*.js && zuul test/browser/*.js' },
+557 silly install resolved     dependencies: { inherits: '2.0.1' },
+557 silly install resolved     license: 'MIT',
+557 silly install resolved     devDependencies: { zuul: '~1.0.9' },
+557 silly install resolved     browser: { './support/isBuffer.js': './support/isBufferBrowser.js' },
+557 silly install resolved     bugs: { url: 'https://github.com/defunctzombie/node-util/issues' },
+557 silly install resolved     _id: 'util@0.10.3',
+557 silly install resolved     dist:
+557 silly install resolved      { shasum: '7afb1afe50805246489e3db7fe0ed379336ac0f9',
+557 silly install resolved        tarball: 'http://registry.npmjs.org/util/-/util-0.10.3.tgz' },
+557 silly install resolved     _from: 'util@0.10.3',
+557 silly install resolved     _npmVersion: '1.3.24',
+557 silly install resolved     _npmUser: { name: 'shtylman', email: 'shtylman@gmail.com' },
+557 silly install resolved     maintainers: [ [Object] ],
+557 silly install resolved     directories: {},
+557 silly install resolved     _shasum: '7afb1afe50805246489e3db7fe0ed379336ac0f9',
+557 silly install resolved     _resolved: 'https://registry.npmjs.org/util/-/util-0.10.3.tgz' } ]
+558 info install util@0.10.3 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+559 info installOne util@0.10.3
+560 verbose installOne of util to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert not in flight; installing
+561 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\util-ada9d67061927263.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+562 silly install write writing util 0.10.3 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+563 silly cache addNamed cb util@0.10.3
+564 verbose unbuild node_modules\win32ole\node_modules\assert\node_modules\util
+565 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+566 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\util\0.10.3\package.tgz
+567 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+568 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+569 silly gunzTarPerm modes [ '777', '666' ]
+570 silly gunzTarPerm extractEntry package.json
+571 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+572 silly gunzTarPerm extractEntry .npmignore
+573 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+574 silly gunzTarPerm extractEntry README.md
+575 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+576 silly gunzTarPerm extractEntry LICENSE
+577 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+578 silly gunzTarPerm extractEntry util.js
+579 silly gunzTarPerm modified mode [ 'util.js', 420, 438 ]
+580 silly gunzTarPerm extractEntry .travis.yml
+581 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+582 http 200 https://registry.npmjs.org/bindings
+583 silly get cb [ 200,
+583 silly get   { date: 'Thu, 23 Apr 2015 15:51:37 GMT',
+583 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+583 silly get     etag: '"5997G8NY1OJEMZ1HNHL7VBX5J"',
+583 silly get     'content-type': 'application/json',
+583 silly get     'cache-control': 'max-age=60',
+583 silly get     'content-length': '17925',
+583 silly get     'accept-ranges': 'bytes',
+583 silly get     via: '1.1 varnish',
+583 silly get     age: '27',
+583 silly get     'x-served-by': 'cache-ams4124-AMS',
+583 silly get     'x-cache': 'HIT',
+583 silly get     'x-cache-hits': '1',
+583 silly get     'x-timer': 'S1429804297.704547,VS0,VE0',
+583 silly get     vary: 'Accept',
+583 silly get     'keep-alive': 'timeout=10, max=50',
+583 silly get     connection: 'Keep-Alive' } ]
+584 verbose get saving bindings to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\bindings\.cache.json
+585 silly gunzTarPerm extractEntry .zuul.yml
+586 silly gunzTarPerm modified mode [ '.zuul.yml', 420, 438 ]
+587 silly gunzTarPerm extractEntry support/isBuffer.js
+588 silly gunzTarPerm modified mode [ 'support/isBuffer.js', 420, 438 ]
+589 silly addNameRange number 2 { name: 'bindings', range: '>=1.2.0 <1.3.0', hasData: true }
+590 silly addNameRange versions [ 'bindings',
+590 silly addNameRange   [ '0.0.1',
+590 silly addNameRange     '0.1.0',
+590 silly addNameRange     '0.1.1',
+590 silly addNameRange     '0.2.0',
+590 silly addNameRange     '0.2.1',
+590 silly addNameRange     '0.2.2',
+590 silly addNameRange     '0.2.3',
+590 silly addNameRange     '0.2.4',
+590 silly addNameRange     '0.3.0',
+590 silly addNameRange     '0.4.0',
+590 silly addNameRange     '1.0.0',
+590 silly addNameRange     '1.1.0',
+590 silly addNameRange     '1.1.1',
+590 silly addNameRange     '1.2.0',
+590 silly addNameRange     '1.2.1' ] ]
+591 verbose addNamed bindings@1.2.1
+592 silly addNamed semver.valid 1.2.1
+593 silly addNamed semver.validRange 1.2.1
+594 silly gunzTarPerm extractEntry support/isBufferBrowser.js
+595 silly gunzTarPerm modified mode [ 'support/isBufferBrowser.js', 420, 438 ]
+596 silly gunzTarPerm extractEntry test/browser/inspect.js
+597 silly gunzTarPerm modified mode [ 'test/browser/inspect.js', 420, 438 ]
+598 silly mapToRegistry name bindings
+599 silly mapToRegistry using default registry
+600 silly mapToRegistry registry https://registry.npmjs.org/
+601 silly mapToRegistry uri https://registry.npmjs.org/bindings
+602 verbose addRemoteTarball https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz not in flight; adding
+603 verbose addRemoteTarball [ 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+603 verbose addRemoteTarball   '14ad6113812d2d37d72e67b4cacb4bb726505f11' ]
+604 http fetch 200 https://registry.npmjs.org/debug/-/debug-2.1.3.tgz
+605 info retry fetch attempt 1 at 18:51:19
+606 info attempt registry request try #1 at 18:51:19
+607 http fetch GET https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+608 silly fetchAndShaCheck shasum ce8ab1b5ee8fbee2bfa3b633cab93d366b63418e
+609 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\debug\-\debug-2.1.3.tgz not in flight; adding
+610 verbose addTmpTarball already have metadata; skipping unpack for debug@2.1.3
+611 silly gunzTarPerm extractEntry test/browser/is.js
+612 silly gunzTarPerm modified mode [ 'test/browser/is.js', 420, 438 ]
+613 silly gunzTarPerm extractEntry test/node/debug.js
+614 silly gunzTarPerm modified mode [ 'test/node/debug.js', 420, 438 ]
+615 silly gunzTarPerm extractEntry test/node/format.js
+616 silly gunzTarPerm modified mode [ 'test/node/format.js', 420, 438 ]
+617 silly gunzTarPerm extractEntry test/node/inspect.js
+618 silly gunzTarPerm modified mode [ 'test/node/inspect.js', 420, 438 ]
+619 silly gunzTarPerm extractEntry test/node/log.js
+620 silly gunzTarPerm modified mode [ 'test/node/log.js', 420, 438 ]
+621 silly gunzTarPerm extractEntry test/node/util.js
+622 silly gunzTarPerm modified mode [ 'test/node/util.js', 420, 438 ]
+623 silly cache afterAdd debug@2.1.3
+624 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\debug\2.1.3\package\package.json not in flight; writing
+625 silly cache afterAdd debug@2.1.3
+626 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\debug\2.1.3\package\package.json already in flight; not writing
+627 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\debug\2.1.3\package\package.json written
+628 silly install resolved [ { name: 'debug',
+628 silly install resolved     version: '2.1.3',
+628 silly install resolved     repository: { type: 'git', url: 'git://github.com/visionmedia/debug.git' },
+628 silly install resolved     description: 'small debugging utility',
+628 silly install resolved     keywords: [ 'debug', 'log', 'debugger' ],
+628 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+628 silly install resolved     contributors: [ [Object] ],
+628 silly install resolved     license: 'MIT',
+628 silly install resolved     dependencies: { ms: '0.7.0' },
+628 silly install resolved     devDependencies: { browserify: '9.0.3', mocha: '*' },
+628 silly install resolved     main: './node.js',
+628 silly install resolved     browser: './browser.js',
+628 silly install resolved     component: { scripts: [Object] },
+628 silly install resolved     gitHead: '0a8e4b7e0d2d1b55ef4e7422498ca24c677ae63a',
+628 silly install resolved     bugs: { url: 'https://github.com/visionmedia/debug/issues' },
+628 silly install resolved     homepage: 'https://github.com/visionmedia/debug',
+628 silly install resolved     _id: 'debug@2.1.3',
+628 silly install resolved     scripts: {},
+628 silly install resolved     _shasum: 'ce8ab1b5ee8fbee2bfa3b633cab93d366b63418e',
+628 silly install resolved     _from: 'debug@>=2.0.0 <3.0.0',
+628 silly install resolved     _npmVersion: '2.5.1',
+628 silly install resolved     _nodeVersion: '0.12.0',
+628 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+628 silly install resolved     maintainers: [ [Object], [Object] ],
+628 silly install resolved     dist:
+628 silly install resolved      { shasum: 'ce8ab1b5ee8fbee2bfa3b633cab93d366b63418e',
+628 silly install resolved        tarball: 'http://registry.npmjs.org/debug/-/debug-2.1.3.tgz' },
+628 silly install resolved     directories: {},
+628 silly install resolved     _resolved: 'https://registry.npmjs.org/debug/-/debug-2.1.3.tgz' } ]
+629 info install debug@2.1.3 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+630 info installOne debug@2.1.3
+631 verbose installOne of debug to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct not in flight; installing
+632 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\debug-b31d1238514e1580.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+633 silly install write writing debug 2.1.3 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+634 silly cache addNamed cb debug@2.1.3
+635 verbose unbuild node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+636 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+637 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\debug\2.1.3\package.tgz
+638 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+639 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+640 silly gunzTarPerm modes [ '777', '666' ]
+641 silly gunzTarPerm extractEntry package.json
+642 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+643 silly gunzTarPerm extractEntry .npmignore
+644 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+645 silly gunzTarPerm extractEntry node.js
+646 silly gunzTarPerm modified mode [ 'node.js', 420, 438 ]
+647 silly gunzTarPerm extractEntry debug.js
+648 silly gunzTarPerm modified mode [ 'debug.js', 420, 438 ]
+649 silly gunzTarPerm extractEntry browser.js
+650 silly gunzTarPerm modified mode [ 'browser.js', 420, 438 ]
+651 silly gunzTarPerm extractEntry Readme.md
+652 silly gunzTarPerm modified mode [ 'Readme.md', 420, 438 ]
+653 silly gunzTarPerm extractEntry bower.json
+654 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+655 silly gunzTarPerm extractEntry .jshintrc
+656 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+657 silly gunzTarPerm extractEntry component.json
+658 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+659 silly gunzTarPerm extractEntry Makefile
+660 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+661 silly gunzTarPerm extractEntry History.md
+662 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+663 info preinstall util@0.10.3
+664 silly prepareForInstallMany adding inherits@2.0.1 from util dependencies
+665 silly cache add args [ 'inherits@2.0.1', null ]
+666 verbose cache add spec inherits@2.0.1
+667 silly cache add parsed spec { raw: 'inherits@2.0.1',
+667 silly cache add   scope: null,
+667 silly cache add   name: 'inherits',
+667 silly cache add   rawSpec: '2.0.1',
+667 silly cache add   spec: '2.0.1',
+667 silly cache add   type: 'version' }
+668 verbose addNamed inherits@2.0.1
+669 silly addNamed semver.valid 2.0.1
+670 silly addNamed semver.validRange 2.0.1
+671 silly mapToRegistry name inherits
+672 silly mapToRegistry using default registry
+673 silly mapToRegistry registry https://registry.npmjs.org/
+674 silly mapToRegistry uri https://registry.npmjs.org/inherits
+675 verbose addNameVersion registry:https://registry.npmjs.org/inherits not in flight; fetching
+676 verbose request uri https://registry.npmjs.org/inherits
+677 verbose request no auth needed
+678 info attempt registry request try #1 at 18:51:19
+679 verbose etag "CRO0K2WOZI4GCPLCO97KHY91E"
+680 http request GET https://registry.npmjs.org/inherits
+681 http 200 https://registry.npmjs.org/nan
+682 silly get cb [ 200,
+682 silly get   { date: 'Thu, 23 Apr 2015 15:51:37 GMT',
+682 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+682 silly get     etag: '"86LS7JEUEBLYSI3DHUXV6I5LN"',
+682 silly get     'content-type': 'application/json',
+682 silly get     'cache-control': 'max-age=60',
+682 silly get     'content-length': '102713',
+682 silly get     'accept-ranges': 'bytes',
+682 silly get     via: '1.1 varnish',
+682 silly get     age: '27',
+682 silly get     'x-served-by': 'cache-ams4123-AMS',
+682 silly get     'x-cache': 'HIT',
+682 silly get     'x-cache-hits': '2',
+682 silly get     'x-timer': 'S1429804297.687171,VS0,VE0',
+682 silly get     vary: 'Accept',
+682 silly get     'keep-alive': 'timeout=10, max=50',
+682 silly get     connection: 'Keep-Alive' } ]
+683 verbose get saving nan to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\nan\.cache.json
+684 silly addNameRange number 2 { name: 'nan', range: '>=1.7.0 <1.8.0', hasData: true }
+685 silly addNameRange versions [ 'nan',
+685 silly addNameRange   [ '0.3.0-wip',
+685 silly addNameRange     '0.3.0-wip2',
+685 silly addNameRange     '0.3.0',
+685 silly addNameRange     '0.3.1',
+685 silly addNameRange     '0.3.2',
+685 silly addNameRange     '0.4.0',
+685 silly addNameRange     '0.4.1',
+685 silly addNameRange     '0.4.2',
+685 silly addNameRange     '0.4.3',
+685 silly addNameRange     '0.4.4',
+685 silly addNameRange     '0.5.0',
+685 silly addNameRange     '0.5.1',
+685 silly addNameRange     '0.5.2',
+685 silly addNameRange     '0.6.0',
+685 silly addNameRange     '0.7.0',
+685 silly addNameRange     '0.7.1',
+685 silly addNameRange     '0.8.0',
+685 silly addNameRange     '1.0.0',
+685 silly addNameRange     '1.1.0',
+685 silly addNameRange     '1.1.1',
+685 silly addNameRange     '1.1.2',
+685 silly addNameRange     '1.2.0',
+685 silly addNameRange     '1.3.0',
+685 silly addNameRange     '1.4.0',
+685 silly addNameRange     '1.4.1',
+685 silly addNameRange     '1.5.0',
+685 silly addNameRange     '1.4.2',
+685 silly addNameRange     '1.4.3',
+685 silly addNameRange     '1.5.1',
+685 silly addNameRange     '1.5.2',
+685 silly addNameRange     '1.6.0',
+685 silly addNameRange     '1.5.3',
+685 silly addNameRange     '1.6.1',
+685 silly addNameRange     '1.6.2',
+685 silly addNameRange     '1.7.0',
+685 silly addNameRange     '1.8.0' ] ]
+686 verbose addNamed nan@1.7.0
+687 silly addNamed semver.valid 1.7.0
+688 silly addNamed semver.validRange 1.7.0
+689 silly mapToRegistry name nan
+690 silly mapToRegistry using default registry
+691 silly mapToRegistry registry https://registry.npmjs.org/
+692 silly mapToRegistry uri https://registry.npmjs.org/nan
+693 verbose addRemoteTarball https://registry.npmjs.org/nan/-/nan-1.7.0.tgz not in flight; adding
+694 verbose addRemoteTarball [ 'https://registry.npmjs.org/nan/-/nan-1.7.0.tgz',
+694 verbose addRemoteTarball   '755b997404e83cbe7bc08bc3c5c56291bce87438' ]
+695 info retry fetch attempt 1 at 18:51:19
+696 info attempt registry request try #1 at 18:51:19
+697 http fetch GET https://registry.npmjs.org/nan/-/nan-1.7.0.tgz
+698 info preinstall debug@2.1.3
+699 silly prepareForInstallMany adding ms@0.7.0 from debug dependencies
+700 silly cache add args [ 'ms@0.7.0', null ]
+701 verbose cache add spec ms@0.7.0
+702 silly cache add parsed spec { raw: 'ms@0.7.0',
+702 silly cache add   scope: null,
+702 silly cache add   name: 'ms',
+702 silly cache add   rawSpec: '0.7.0',
+702 silly cache add   spec: '0.7.0',
+702 silly cache add   type: 'version' }
+703 verbose addNamed ms@0.7.0
+704 silly addNamed semver.valid 0.7.0
+705 silly addNamed semver.validRange 0.7.0
+706 silly mapToRegistry name ms
+707 silly mapToRegistry using default registry
+708 silly mapToRegistry registry https://registry.npmjs.org/
+709 silly mapToRegistry uri https://registry.npmjs.org/ms
+710 verbose addNameVersion registry:https://registry.npmjs.org/ms not in flight; fetching
+711 verbose request uri https://registry.npmjs.org/ms
+712 verbose request no auth needed
+713 info attempt registry request try #1 at 18:51:19
+714 http request GET https://registry.npmjs.org/ms
+715 http fetch 200 https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+716 silly fetchAndShaCheck shasum 14ad6113812d2d37d72e67b4cacb4bb726505f11
+717 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\bindings\-\bindings-1.2.1.tgz not in flight; adding
+718 verbose addTmpTarball already have metadata; skipping unpack for bindings@1.2.1
+719 silly cache afterAdd bindings@1.2.1
+720 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\bindings\1.2.1\package\package.json not in flight; writing
+721 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\bindings\1.2.1\package\package.json written
+722 http 200 https://registry.npmjs.org/inherits
+723 silly get cb [ 200,
+723 silly get   { date: 'Thu, 23 Apr 2015 15:51:38 GMT',
+723 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+723 silly get     etag: '"2JQ9T5BW10349CYNB2L6ASWW6"',
+723 silly get     'content-type': 'application/json',
+723 silly get     'cache-control': 'max-age=60',
+723 silly get     'content-length': '5080',
+723 silly get     'accept-ranges': 'bytes',
+723 silly get     via: '1.1 varnish',
+723 silly get     age: '56',
+723 silly get     'x-served-by': 'cache-ams4126-AMS',
+723 silly get     'x-cache': 'HIT',
+723 silly get     'x-cache-hits': '4',
+723 silly get     'x-timer': 'S1429804298.168280,VS0,VE0',
+723 silly get     vary: 'Accept',
+723 silly get     'keep-alive': 'timeout=10, max=50',
+723 silly get     connection: 'Keep-Alive' } ]
+724 verbose get saving inherits to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\inherits\.cache.json
+725 silly mapToRegistry name inherits
+726 silly mapToRegistry using default registry
+727 silly mapToRegistry registry https://registry.npmjs.org/
+728 silly mapToRegistry uri https://registry.npmjs.org/inherits
+729 verbose addRemoteTarball https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz not in flight; adding
+730 verbose addRemoteTarball [ 'https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz',
+730 verbose addRemoteTarball   'b17d08d326b4423e568eff719f91b0b1cbdf69f1' ]
+731 info retry fetch attempt 1 at 18:51:19
+732 info attempt registry request try #1 at 18:51:19
+733 http fetch GET https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz
+734 http fetch 200 https://registry.npmjs.org/nan/-/nan-1.7.0.tgz
+735 http 200 https://registry.npmjs.org/ms
+736 silly get cb [ 200,
+736 silly get   { date: 'Thu, 23 Apr 2015 15:51:38 GMT',
+736 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+736 silly get     etag: '"EG7250G06E6SKN1JBDNA1NRDU"',
+736 silly get     'content-type': 'application/json',
+736 silly get     'cache-control': 'max-age=60',
+736 silly get     'content-length': '8316',
+736 silly get     'accept-ranges': 'bytes',
+736 silly get     via: '1.1 varnish',
+736 silly get     age: '1',
+736 silly get     'x-served-by': 'cache-ams4120-AMS',
+736 silly get     'x-cache': 'HIT',
+736 silly get     'x-cache-hits': '1',
+736 silly get     'x-timer': 'S1429804298.234660,VS0,VE0',
+736 silly get     vary: 'Accept',
+736 silly get     'keep-alive': 'timeout=10, max=50',
+736 silly get     connection: 'Keep-Alive' } ]
+737 verbose get saving ms to C:\Documents and Settings\Operator\Application Data\npm-cache\registry.npmjs.org\ms\.cache.json
+738 silly mapToRegistry name ms
+739 silly mapToRegistry using default registry
+740 silly mapToRegistry registry https://registry.npmjs.org/
+741 silly mapToRegistry uri https://registry.npmjs.org/ms
+742 verbose addRemoteTarball https://registry.npmjs.org/ms/-/ms-0.7.0.tgz not in flight; adding
+743 verbose addRemoteTarball [ 'https://registry.npmjs.org/ms/-/ms-0.7.0.tgz',
+743 verbose addRemoteTarball   '865be94c2e7397ad8a57da6a633a6e2f30798b83' ]
+744 info retry fetch attempt 1 at 18:51:19
+745 info attempt registry request try #1 at 18:51:19
+746 http fetch GET https://registry.npmjs.org/ms/-/ms-0.7.0.tgz
+747 silly fetchAndShaCheck shasum 755b997404e83cbe7bc08bc3c5c56291bce87438
+748 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\nan\-\nan-1.7.0.tgz not in flight; adding
+749 verbose addTmpTarball already have metadata; skipping unpack for nan@1.7.0
+750 silly cache afterAdd nan@1.7.0
+751 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\nan\1.7.0\package\package.json not in flight; writing
+752 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\nan\1.7.0\package\package.json written
+753 silly install resolved [ { name: 'debug',
+753 silly install resolved     version: '2.1.3',
+753 silly install resolved     repository: { type: 'git', url: 'git://github.com/visionmedia/debug.git' },
+753 silly install resolved     description: 'small debugging utility',
+753 silly install resolved     keywords: [ 'debug', 'log', 'debugger' ],
+753 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+753 silly install resolved     contributors: [ [Object] ],
+753 silly install resolved     license: 'MIT',
+753 silly install resolved     dependencies: { ms: '0.7.0' },
+753 silly install resolved     devDependencies: { browserify: '9.0.3', mocha: '*' },
+753 silly install resolved     main: './node.js',
+753 silly install resolved     browser: './browser.js',
+753 silly install resolved     component: { scripts: [Object] },
+753 silly install resolved     gitHead: '0a8e4b7e0d2d1b55ef4e7422498ca24c677ae63a',
+753 silly install resolved     bugs: { url: 'https://github.com/visionmedia/debug/issues' },
+753 silly install resolved     homepage: 'https://github.com/visionmedia/debug',
+753 silly install resolved     _id: 'debug@2.1.3',
+753 silly install resolved     scripts: {},
+753 silly install resolved     _shasum: 'ce8ab1b5ee8fbee2bfa3b633cab93d366b63418e',
+753 silly install resolved     _from: 'debug@>=2.0.0 <3.0.0',
+753 silly install resolved     _npmVersion: '2.5.1',
+753 silly install resolved     _nodeVersion: '0.12.0',
+753 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+753 silly install resolved     maintainers: [ [Object], [Object] ],
+753 silly install resolved     dist:
+753 silly install resolved      { shasum: 'ce8ab1b5ee8fbee2bfa3b633cab93d366b63418e',
+753 silly install resolved        tarball: 'http://registry.npmjs.org/debug/-/debug-2.1.3.tgz' },
+753 silly install resolved     directories: {},
+753 silly install resolved     _resolved: 'https://registry.npmjs.org/debug/-/debug-2.1.3.tgz' },
+753 silly install resolved   { name: 'bindings',
+753 silly install resolved     description: 'Helper module for loading your native module\'s .node file',
+753 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+753 silly install resolved     version: '1.2.1',
+753 silly install resolved     author:
+753 silly install resolved      { name: 'Nathan Rajlich',
+753 silly install resolved        email: 'nathan@tootallnate.net',
+753 silly install resolved        url: 'http://tootallnate.net' },
+753 silly install resolved     repository:
+753 silly install resolved      { type: 'git',
+753 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+753 silly install resolved     main: './bindings.js',
+753 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+753 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+753 silly install resolved     license: 'MIT',
+753 silly install resolved     gitHead: 'e404152ee27f8478ccbc7122ee051246e8e5ec02',
+753 silly install resolved     _id: 'bindings@1.2.1',
+753 silly install resolved     scripts: {},
+753 silly install resolved     _shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+753 silly install resolved     _from: 'bindings@>=1.2.0 <1.3.0',
+753 silly install resolved     _npmVersion: '1.4.14',
+753 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+753 silly install resolved     maintainers: [ [Object], [Object] ],
+753 silly install resolved     dist:
+753 silly install resolved      { shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+753 silly install resolved        tarball: 'http://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+753 silly install resolved     directories: {},
+753 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+753 silly install resolved   { name: 'nan',
+753 silly install resolved     version: '1.7.0',
+753 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+753 silly install resolved     main: 'include_dirs.js',
+753 silly install resolved     repository: { type: 'git', url: 'git://github.com/rvagg/nan.git' },
+753 silly install resolved     scripts:
+753 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+753 silly install resolved        'rebuild-tests': 'pangyp rebuild --directory test' },
+753 silly install resolved     contributors:
+753 silly install resolved      [ [Object],
+753 silly install resolved        [Object],
+753 silly install resolved        [Object],
+753 silly install resolved        [Object],
+753 silly install resolved        [Object],
+753 silly install resolved        [Object],
+753 silly install resolved        [Object] ],
+753 silly install resolved     devDependencies:
+753 silly install resolved      { bindings: '~1.2.1',
+753 silly install resolved        'node-gyp': '~1.0.2',
+753 silly install resolved        pangyp: '~2.0.1',
+753 silly install resolved        tap: '~0.5.0',
+753 silly install resolved        xtend: '~4.0.0' },
+753 silly install resolved     license: 'MIT',
+753 silly install resolved     gitHead: '550efb5dde5cb6bf79db87ab48dce850e56e971a',
+753 silly install resolved     bugs: { url: 'https://github.com/rvagg/nan/issues' },
+753 silly install resolved     homepage: 'https://github.com/rvagg/nan',
+753 silly install resolved     _id: 'nan@1.7.0',
+753 silly install resolved     _shasum: '755b997404e83cbe7bc08bc3c5c56291bce87438',
+753 silly install resolved     _from: 'nan@>=1.7.0 <1.8.0',
+753 silly install resolved     _npmVersion: '2.5.1',
+753 silly install resolved     _nodeVersion: '0.12.0',
+753 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+753 silly install resolved     maintainers: [ [Object], [Object] ],
+753 silly install resolved     dist:
+753 silly install resolved      { shasum: '755b997404e83cbe7bc08bc3c5c56291bce87438',
+753 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.7.0.tgz' },
+753 silly install resolved     directories: {},
+753 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.7.0.tgz' } ]
+754 info install debug@2.1.3 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+755 info install bindings@1.2.1 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+756 info install nan@1.7.0 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+757 info installOne debug@2.1.3
+758 verbose installOne of debug to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref not in flight; installing
+759 info installOne bindings@1.2.1
+760 verbose installOne of bindings to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref not in flight; installing
+761 info installOne nan@1.7.0
+762 verbose installOne of nan to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref not in flight; installing
+763 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\debug-2f45fe94f174703b.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+764 silly install write writing debug 2.1.3 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+765 silly cache addNamed cb debug@2.1.3
+766 verbose unbuild node_modules\win32ole\node_modules\ref\node_modules\debug
+767 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\bindings-c8ac3eb6f83f116f.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+768 silly install write writing bindings 1.2.1 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+769 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+770 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\debug\2.1.3\package.tgz
+771 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+772 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+773 silly gunzTarPerm modes [ '777', '666' ]
+774 silly cache addNamed cb bindings@1.2.1
+775 verbose unbuild node_modules\win32ole\node_modules\ref\node_modules\bindings
+776 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+777 silly gunzTarPerm extractEntry package.json
+778 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+779 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\bindings\1.2.1\package.tgz
+780 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+781 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+782 silly gunzTarPerm modes [ '777', '666' ]
+783 silly gunzTarPerm extractEntry .npmignore
+784 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+785 silly gunzTarPerm extractEntry node.js
+786 silly gunzTarPerm modified mode [ 'node.js', 420, 438 ]
+787 silly gunzTarPerm extractEntry package.json
+788 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+789 silly gunzTarPerm extractEntry README.md
+790 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+791 silly gunzTarPerm extractEntry bindings.js
+792 silly gunzTarPerm modified mode [ 'bindings.js', 420, 438 ]
+793 silly gunzTarPerm extractEntry debug.js
+794 silly gunzTarPerm modified mode [ 'debug.js', 420, 438 ]
+795 silly gunzTarPerm extractEntry browser.js
+796 silly gunzTarPerm modified mode [ 'browser.js', 420, 438 ]
+797 silly gunzTarPerm extractEntry Readme.md
+798 silly gunzTarPerm modified mode [ 'Readme.md', 420, 438 ]
+799 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\nan-26d975580efb89fc.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+800 silly install write writing nan 1.7.0 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+801 silly gunzTarPerm extractEntry bower.json
+802 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+803 silly gunzTarPerm extractEntry .jshintrc
+804 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+805 silly cache addNamed cb nan@1.7.0
+806 verbose unbuild node_modules\win32ole\node_modules\ref\node_modules\nan
+807 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+808 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\nan\1.7.0\package.tgz
+809 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+810 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+811 silly gunzTarPerm modes [ '777', '666' ]
+812 silly gunzTarPerm extractEntry component.json
+813 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+814 silly gunzTarPerm extractEntry Makefile
+815 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+816 silly gunzTarPerm extractEntry package.json
+817 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+818 silly gunzTarPerm extractEntry include_dirs.js
+819 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 438 ]
+820 silly gunzTarPerm extractEntry LICENSE.md
+821 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 438 ]
+822 info preinstall bindings@1.2.1
+823 silly gunzTarPerm extractEntry History.md
+824 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+825 silly install resolved []
+826 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+827 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+828 verbose linkStuff [ false,
+828 verbose linkStuff   false,
+828 verbose linkStuff   false,
+828 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\ref\\node_modules' ]
+829 info linkStuff bindings@1.2.1
+830 silly gunzTarPerm extractEntry .dntrc
+831 silly gunzTarPerm modified mode [ '.dntrc', 436, 438 ]
+832 silly gunzTarPerm extractEntry appveyor.yml
+833 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 438 ]
+834 verbose linkBins bindings@1.2.1
+835 verbose linkMans bindings@1.2.1
+836 verbose rebuildBundles bindings@1.2.1
+837 info install bindings@1.2.1
+838 info postinstall bindings@1.2.1
+839 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\bindings-c8ac3eb6f83f116f.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\bindings
+840 silly gunzTarPerm extractEntry nan.h
+841 silly gunzTarPerm modified mode [ 'nan.h', 436, 438 ]
+842 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+843 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 438 ]
+844 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+845 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 438 ]
+846 silly gunzTarPerm extractEntry nan_new.h
+847 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 438 ]
+848 silly gunzTarPerm extractEntry nan_string_bytes.h
+849 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 438 ]
+850 silly gunzTarPerm extractEntry CHANGELOG.md
+851 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 438 ]
+852 info preinstall debug@2.1.3
+853 silly prepareForInstallMany adding ms@0.7.0 from debug dependencies
+854 silly cache add args [ 'ms@0.7.0', null ]
+855 verbose cache add spec ms@0.7.0
+856 silly cache add parsed spec { raw: 'ms@0.7.0',
+856 silly cache add   scope: null,
+856 silly cache add   name: 'ms',
+856 silly cache add   rawSpec: '0.7.0',
+856 silly cache add   spec: '0.7.0',
+856 silly cache add   type: 'version' }
+857 verbose addNamed ms@0.7.0
+858 silly addNamed semver.valid 0.7.0
+859 silly addNamed semver.validRange 0.7.0
+860 silly mapToRegistry name ms
+861 silly mapToRegistry using default registry
+862 silly mapToRegistry registry https://registry.npmjs.org/
+863 silly mapToRegistry uri https://registry.npmjs.org/ms
+864 verbose addNameVersion registry:https://registry.npmjs.org/ms not in flight; fetching
+865 verbose get https://registry.npmjs.org/ms not expired, no request
+866 silly mapToRegistry name ms
+867 silly mapToRegistry using default registry
+868 silly mapToRegistry registry https://registry.npmjs.org/
+869 silly mapToRegistry uri https://registry.npmjs.org/ms
+870 verbose addRemoteTarball https://registry.npmjs.org/ms/-/ms-0.7.0.tgz already in flight; waiting
+871 info preinstall nan@1.7.0
+872 silly install resolved []
+873 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+874 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+875 verbose linkStuff [ false,
+875 verbose linkStuff   false,
+875 verbose linkStuff   false,
+875 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\ref\\node_modules' ]
+876 info linkStuff nan@1.7.0
+877 verbose linkBins nan@1.7.0
+878 verbose linkMans nan@1.7.0
+879 verbose rebuildBundles nan@1.7.0
+880 info install nan@1.7.0
+881 info postinstall nan@1.7.0
+882 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\nan-26d975580efb89fc.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\nan
+883 http fetch 200 https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz
+884 silly fetchAndShaCheck shasum b17d08d326b4423e568eff719f91b0b1cbdf69f1
+885 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\inherits\-\inherits-2.0.1.tgz not in flight; adding
+886 verbose addTmpTarball already have metadata; skipping unpack for inherits@2.0.1
+887 silly cache afterAdd inherits@2.0.1
+888 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\inherits\2.0.1\package\package.json not in flight; writing
+889 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\inherits\2.0.1\package\package.json written
+890 silly install resolved [ { name: 'inherits',
+890 silly install resolved     description: 'Browser-friendly inheritance fully compatible with standard node.js inherits()',
+890 silly install resolved     version: '2.0.1',
+890 silly install resolved     keywords:
+890 silly install resolved      [ 'inheritance',
+890 silly install resolved        'class',
+890 silly install resolved        'klass',
+890 silly install resolved        'oop',
+890 silly install resolved        'object-oriented',
+890 silly install resolved        'inherits',
+890 silly install resolved        'browser',
+890 silly install resolved        'browserify' ],
+890 silly install resolved     main: './inherits.js',
+890 silly install resolved     browser: './inherits_browser.js',
+890 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/inherits' },
+890 silly install resolved     license: 'ISC',
+890 silly install resolved     scripts: { test: 'node test' },
+890 silly install resolved     bugs: { url: 'https://github.com/isaacs/inherits/issues' },
+890 silly install resolved     _id: 'inherits@2.0.1',
+890 silly install resolved     dist:
+890 silly install resolved      { shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+890 silly install resolved        tarball: 'http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz' },
+890 silly install resolved     _from: 'inherits@2.0.1',
+890 silly install resolved     _npmVersion: '1.3.8',
+890 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+890 silly install resolved     maintainers: [ [Object] ],
+890 silly install resolved     directories: {},
+890 silly install resolved     _shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+890 silly install resolved     _resolved: 'https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz' } ]
+891 info install inherits@2.0.1 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+892 info installOne inherits@2.0.1
+893 verbose installOne of inherits to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util not in flight; installing
+894 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\inherits-ac5e4833cd1ebfbb.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+895 silly install write writing inherits 2.0.1 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+896 silly cache addNamed cb inherits@2.0.1
+897 verbose unbuild node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+898 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+899 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\inherits\2.0.1\package.tgz
+900 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+901 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+902 silly gunzTarPerm modes [ '777', '666' ]
+903 silly gunzTarPerm extractEntry package.json
+904 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+905 silly gunzTarPerm extractEntry README.md
+906 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+907 silly gunzTarPerm extractEntry LICENSE
+908 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+909 silly gunzTarPerm extractEntry inherits.js
+910 silly gunzTarPerm modified mode [ 'inherits.js', 420, 438 ]
+911 silly gunzTarPerm extractEntry inherits_browser.js
+912 silly gunzTarPerm modified mode [ 'inherits_browser.js', 420, 438 ]
+913 silly gunzTarPerm extractEntry test.js
+914 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+915 info preinstall inherits@2.0.1
+916 silly install resolved []
+917 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+918 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+919 verbose linkStuff [ false,
+919 verbose linkStuff   false,
+919 verbose linkStuff   false,
+919 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\assert\\node_modules\\util\\node_modules' ]
+920 info linkStuff inherits@2.0.1
+921 verbose linkBins inherits@2.0.1
+922 verbose linkMans inherits@2.0.1
+923 verbose rebuildBundles inherits@2.0.1
+924 info install inherits@2.0.1
+925 info postinstall inherits@2.0.1
+926 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\inherits-ac5e4833cd1ebfbb.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util\node_modules\inherits
+927 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+928 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+929 verbose linkStuff [ false,
+929 verbose linkStuff   false,
+929 verbose linkStuff   false,
+929 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\assert\\node_modules' ]
+930 info linkStuff util@0.10.3
+931 verbose linkBins util@0.10.3
+932 verbose linkMans util@0.10.3
+933 verbose rebuildBundles util@0.10.3
+934 verbose rebuildBundles [ 'inherits' ]
+935 info install util@0.10.3
+936 http fetch 200 https://registry.npmjs.org/ms/-/ms-0.7.0.tgz
+937 info postinstall util@0.10.3
+938 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\util-ada9d67061927263.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert\node_modules\util
+939 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+940 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+941 verbose linkStuff [ false,
+941 verbose linkStuff   false,
+941 verbose linkStuff   false,
+941 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules' ]
+942 info linkStuff assert@1.3.0
+943 silly fetchAndShaCheck shasum 865be94c2e7397ad8a57da6a633a6e2f30798b83
+944 verbose linkBins assert@1.3.0
+945 verbose linkMans assert@1.3.0
+946 verbose rebuildBundles assert@1.3.0
+947 verbose rebuildBundles [ 'util' ]
+948 info install assert@1.3.0
+949 verbose addTmpTarball C:\temp\npm-3180-4aa0a9c1\registry.npmjs.org\ms\-\ms-0.7.0.tgz not in flight; adding
+950 verbose addTmpTarball already have metadata; skipping unpack for ms@0.7.0
+951 info postinstall assert@1.3.0
+952 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\assert-8672681c97d30fce.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\assert
+953 silly cache afterAdd ms@0.7.0
+954 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\ms\0.7.0\package\package.json not in flight; writing
+955 silly cache afterAdd ms@0.7.0
+956 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\ms\0.7.0\package\package.json already in flight; not writing
+957 verbose afterAdd C:\Documents and Settings\Operator\Application Data\npm-cache\ms\0.7.0\package\package.json written
+958 silly install resolved [ { name: 'ms',
+958 silly install resolved     version: '0.7.0',
+958 silly install resolved     description: 'Tiny ms conversion utility',
+958 silly install resolved     repository: { type: 'git', url: 'git://github.com/guille/ms.js.git' },
+958 silly install resolved     main: './index',
+958 silly install resolved     devDependencies: { mocha: '*', 'expect.js': '*', serve: '*' },
+958 silly install resolved     component: { scripts: [Object] },
+958 silly install resolved     gitHead: '1e9cd9b05ef0dc26f765434d2bfee42394376e52',
+958 silly install resolved     bugs: { url: 'https://github.com/guille/ms.js/issues' },
+958 silly install resolved     homepage: 'https://github.com/guille/ms.js',
+958 silly install resolved     _id: 'ms@0.7.0',
+958 silly install resolved     scripts: {},
+958 silly install resolved     _shasum: '865be94c2e7397ad8a57da6a633a6e2f30798b83',
+958 silly install resolved     _from: 'ms@0.7.0',
+958 silly install resolved     _npmVersion: '1.4.21',
+958 silly install resolved     _npmUser: { name: 'rauchg', email: 'rauchg@gmail.com' },
+958 silly install resolved     maintainers: [ [Object] ],
+958 silly install resolved     dist:
+958 silly install resolved      { shasum: '865be94c2e7397ad8a57da6a633a6e2f30798b83',
+958 silly install resolved        tarball: 'http://registry.npmjs.org/ms/-/ms-0.7.0.tgz' },
+958 silly install resolved     directories: {},
+958 silly install resolved     _resolved: 'https://registry.npmjs.org/ms/-/ms-0.7.0.tgz' } ]
+959 info install ms@0.7.0 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+960 info installOne ms@0.7.0
+961 verbose installOne of ms to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug not in flight; installing
+962 silly install resolved [ { name: 'ms',
+962 silly install resolved     version: '0.7.0',
+962 silly install resolved     description: 'Tiny ms conversion utility',
+962 silly install resolved     repository: { type: 'git', url: 'git://github.com/guille/ms.js.git' },
+962 silly install resolved     main: './index',
+962 silly install resolved     devDependencies: { mocha: '*', 'expect.js': '*', serve: '*' },
+962 silly install resolved     component: { scripts: [Object] },
+962 silly install resolved     gitHead: '1e9cd9b05ef0dc26f765434d2bfee42394376e52',
+962 silly install resolved     bugs: { url: 'https://github.com/guille/ms.js/issues' },
+962 silly install resolved     homepage: 'https://github.com/guille/ms.js',
+962 silly install resolved     _id: 'ms@0.7.0',
+962 silly install resolved     scripts: {},
+962 silly install resolved     _shasum: '865be94c2e7397ad8a57da6a633a6e2f30798b83',
+962 silly install resolved     _from: 'ms@0.7.0',
+962 silly install resolved     _npmVersion: '1.4.21',
+962 silly install resolved     _npmUser: { name: 'rauchg', email: 'rauchg@gmail.com' },
+962 silly install resolved     maintainers: [ [Object] ],
+962 silly install resolved     dist:
+962 silly install resolved      { shasum: '865be94c2e7397ad8a57da6a633a6e2f30798b83',
+962 silly install resolved        tarball: 'http://registry.npmjs.org/ms/-/ms-0.7.0.tgz' },
+962 silly install resolved     directories: {},
+962 silly install resolved     _resolved: 'https://registry.npmjs.org/ms/-/ms-0.7.0.tgz' } ]
+963 info install ms@0.7.0 into C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+964 info installOne ms@0.7.0
+965 verbose installOne of ms to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug not in flight; installing
+966 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ms-5ba25cf1414f2aa6.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+967 silly install write writing ms 0.7.0 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+968 verbose lock using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ms-16ab942ecbc234dc.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+969 silly install write writing ms 0.7.0 to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+970 silly cache addNamed cb ms@0.7.0
+971 verbose unbuild node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+972 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+973 silly cache addNamed cb ms@0.7.0
+974 verbose unbuild node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+975 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\ms\0.7.0\package.tgz
+976 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+977 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+978 silly gunzTarPerm modes [ '777', '666' ]
+979 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+980 verbose tar unpack C:\Documents and Settings\Operator\Application Data\npm-cache\ms\0.7.0\package.tgz
+981 verbose tar unpacking to C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+982 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+983 silly gunzTarPerm modes [ '777', '666' ]
+984 silly gunzTarPerm extractEntry package.json
+985 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+986 silly gunzTarPerm extractEntry .npmignore
+987 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+988 silly gunzTarPerm extractEntry README.md
+989 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+990 silly gunzTarPerm extractEntry package.json
+991 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+992 silly gunzTarPerm extractEntry LICENSE
+993 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+994 silly gunzTarPerm extractEntry index.js
+995 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+996 info preinstall ms@0.7.0
+997 silly install resolved []
+998 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+999 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+1000 verbose linkStuff [ false,
+1000 verbose linkStuff   false,
+1000 verbose linkStuff   false,
+1000 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\ref-struct\\node_modules\\debug\\node_modules' ]
+1001 info linkStuff ms@0.7.0
+1002 verbose linkBins ms@0.7.0
+1003 verbose linkMans ms@0.7.0
+1004 verbose rebuildBundles ms@0.7.0
+1005 info install ms@0.7.0
+1006 info postinstall ms@0.7.0
+1007 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ms-5ba25cf1414f2aa6.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug\node_modules\ms
+1008 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+1009 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+1010 verbose linkStuff [ false,
+1010 verbose linkStuff   false,
+1010 verbose linkStuff   false,
+1010 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\ref-struct\\node_modules' ]
+1011 info linkStuff debug@2.1.3
+1012 verbose linkBins debug@2.1.3
+1013 verbose linkMans debug@2.1.3
+1014 verbose rebuildBundles debug@2.1.3
+1015 verbose rebuildBundles [ 'ms' ]
+1016 info install debug@2.1.3
+1017 info postinstall debug@2.1.3
+1018 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\debug-b31d1238514e1580.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct\node_modules\debug
+1019 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+1020 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+1021 verbose linkStuff [ false,
+1021 verbose linkStuff   false,
+1021 verbose linkStuff   false,
+1021 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules' ]
+1022 info linkStuff ref-struct@1.0.1
+1023 verbose linkBins ref-struct@1.0.1
+1024 verbose linkMans ref-struct@1.0.1
+1025 verbose rebuildBundles ref-struct@1.0.1
+1026 verbose rebuildBundles [ 'debug' ]
+1027 info install ref-struct@1.0.1
+1028 info postinstall ref-struct@1.0.1
+1029 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ref-struct-13a4c65ef81ea935.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref-struct
+1030 silly gunzTarPerm extractEntry .npmignore
+1031 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+1032 silly gunzTarPerm extractEntry README.md
+1033 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+1034 silly gunzTarPerm extractEntry LICENSE
+1035 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+1036 silly gunzTarPerm extractEntry index.js
+1037 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+1038 info preinstall ms@0.7.0
+1039 silly install resolved []
+1040 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+1041 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+1042 verbose linkStuff [ false,
+1042 verbose linkStuff   false,
+1042 verbose linkStuff   false,
+1042 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\ref\\node_modules\\debug\\node_modules' ]
+1043 info linkStuff ms@0.7.0
+1044 verbose linkBins ms@0.7.0
+1045 verbose linkMans ms@0.7.0
+1046 verbose rebuildBundles ms@0.7.0
+1047 info install ms@0.7.0
+1048 info postinstall ms@0.7.0
+1049 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ms-16ab942ecbc234dc.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug\node_modules\ms
+1050 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+1051 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+1052 verbose linkStuff [ false,
+1052 verbose linkStuff   false,
+1052 verbose linkStuff   false,
+1052 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules\\ref\\node_modules' ]
+1053 info linkStuff debug@2.1.3
+1054 verbose linkBins debug@2.1.3
+1055 verbose linkMans debug@2.1.3
+1056 verbose rebuildBundles debug@2.1.3
+1057 verbose rebuildBundles [ 'ms' ]
+1058 info install debug@2.1.3
+1059 info postinstall debug@2.1.3
+1060 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\debug-2f45fe94f174703b.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref\node_modules\debug
+1061 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+1062 info build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+1063 verbose linkStuff [ false,
+1063 verbose linkStuff   false,
+1063 verbose linkStuff   false,
+1063 verbose linkStuff   'C:\\Documents and Settings\\Operator\\Dropbox\\shop\\node_modules\\win32ole\\node_modules' ]
+1064 info linkStuff ref@1.0.1
+1065 verbose linkBins ref@1.0.1
+1066 verbose linkMans ref@1.0.1
+1067 verbose rebuildBundles ref@1.0.1
+1068 verbose rebuildBundles [ 'bindings', 'debug', 'nan' ]
+1069 info install ref@1.0.1
+1070 verbose unsafe-perm in lifecycle true
+1071 info ref@1.0.1 Failed to exec install script
+1072 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\ref-06a608415f529474.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+1073 verbose about to build C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+1074 verbose unlock done using C:\Documents and Settings\Operator\Application Data\npm-cache\_locks\win32ole-4597db6074d36ec3.lock for C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+1075 verbose stack Error: ref@1.0.1 install: `node-gyp rebuild`
+1075 verbose stack Exit status 1
+1075 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
+1075 verbose stack     at EventEmitter.emit (events.js:110:17)
+1075 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:14:12)
+1075 verbose stack     at ChildProcess.emit (events.js:110:17)
+1075 verbose stack     at maybeClose (child_process.js:1008:16)
+1075 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
+1076 verbose pkgid ref@1.0.1
+1077 verbose cwd C:\Documents and Settings\Operator\Dropbox\shop
+1078 error Windows_NT 5.1.2600
+1079 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "win32ole"
+1080 error node v0.12.0
+1081 error npm  v2.5.1
+1082 error code ELIFECYCLE
+1083 error ref@1.0.1 install: `node-gyp rebuild`
+1083 error Exit status 1
+1084 error Failed at the ref@1.0.1 install script 'node-gyp rebuild'.
+1084 error This is most likely a problem with the ref package,
+1084 error not with npm itself.
+1084 error Tell the author that this fails on your system:
+1084 error     node-gyp rebuild
+1084 error You can get their info via:
+1084 error     npm owner ls ref
+1084 error There is likely additional logging output above.
+1085 verbose exit [ 1, true ]
+1086 verbose unbuild node_modules\win32ole\node_modules\ref
+1087 info preuninstall ref@1.0.1
+1088 info uninstall ref@1.0.1
+1089 verbose unbuild rmStuff ref@1.0.1 from C:\Documents and Settings\Operator\Dropbox\shop\node_modules
+1090 verbose unbuild rmStuff in C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules
+1091 info postuninstall ref@1.0.1
+1092 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+1093 silly gentlyRm purging C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules\ref
+1094 silly gentlyRm quitting because other entries in C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole\node_modules
+1095 verbose unbuild node_modules\win32ole
+1096 info preuninstall win32ole@0.1.3
+1097 info uninstall win32ole@0.1.3
+1098 verbose unbuild rmStuff win32ole@0.1.3 from C:\Documents and Settings\Operator\Dropbox\shop\node_modules
+1099 info postuninstall win32ole@0.1.3
+1100 verbose gentlyRm vacuuming C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+1101 silly gentlyRm purging C:\Documents and Settings\Operator\Dropbox\shop\node_modules\win32ole
+1102 silly gentlyRm quitting because other entries in C:\Documents and Settings\Operator\Dropbox\shop\node_modules

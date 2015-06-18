@@ -1,0 +1,26 @@
+<div class="container-fluid">
+	
+	<div class="row">
+	
+
+		<div>
+			Username
+			<input type="text" ng-model="username"></br></br>
+			<input type="checkbox" ng-model="multiple">upload multiple file</br></br>
+			watching model:
+			<div class="button" ng-file-select ng-model="files" ng-multiple="multiple">Select File</div>
+			on file change:
+			<div class="button" ng-file-select ng-file-change="upload($files)" ng-multiple="multiple">Select File</div>
+			Drop File:
+			<div ng-file-drop ng-file-select ng-model="files" class="drop-box" 
+				drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+				accept="image/*,application/pdf">Drop pdfs or images here or click to upload</div>
+			<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+			<ul>
+				<li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+			</ul>
+		</div>
+		</div>
+		
+	</div>  
+</div>

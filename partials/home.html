@@ -1,0 +1,24 @@
+<div class="container">
+    <carousel interval="myInterval">
+        <slide active="slide.active" ng-repeat="slide in slides">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+        </slide>
+    </carousel>
+    <h2 class="text-center">Новинки!</h2>
+    <div class="row equal">
+        <!-- Product #1 Starts -->
+        <div class="col-md-3 col-sm-6" ng-repeat="product in latestProducts">
+            <div class="product-col">
+                <div class="image">
+                    <img alt="product" class="img-responsive" ng-src="data/products/{{product.id}}.jpg"/>
+                </div>
+                <div class="caption">
+                    <h4><a ng-href="#/product/{{product.id}}">{{product.name}}</a></h4>
+                    <div class="description">
+                        {{product.description}} 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

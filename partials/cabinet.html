@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <div class="row">
+
+<!--
+	<div class="col-sm-3 col-md-2 sidebar">
+	  <ul class="nav nav-sidebar">
+		<li ng-class="{active: tab=='acc'}"><a ng-click='tab="acc"' href="">Аккаунт </a></li>
+ 		
+		<li ng-class="{active: tab=='ord'}"><a ng-click='tab="ord"' href="">Заказы</a></li>
+		<li ng-class="{active: tab=='rec'}"><a ng-click='tab="rec"' href="">Акт сверки</a></li>
+		<li ng-class="{active: tab=='alk'}"><a ng-click='tab="alk"' href="">Алк. декларация</a></li>
+		
+ 	  </ul>
+	</div>
+	
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+-->
+	
+	<div class="col-sm-12">
+	
+	<div ng-show='tab=="acc"'>
+	
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="name">
+					Имя 
+				</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="name" name="name" ng-model="userData.name" placeholder="Новое имя" type="name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="name">
+					Пароль 
+				</label>
+				<div class="col-sm-8">
+					<input class="form-control" ng-model="userData.password" placeholder="Новый пароль" type="password">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="phone">
+					Телефон 
+				</label>
+				<div class="col-sm-8">
+					<input class="form-control" name="phone" ng-model="userData.phone" placeholder="Новый телефон" type="phone">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="email">
+					Email 
+				</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="email" name="email" ng-model="userData.email" placeholder="Новый email" type="email">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="address">
+					Адрес доставки
+				</label>
+				<div class="col-sm-8">
+					<input class="form-control" name="address" ng-model="userData.address" placeholder="Новый адрес доставки" type="address">
+				</div>
+			</div>
+			
+			<div class="col-sm-offset-2 col-sm-8">
+				<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlertt(alerts, $index)">{{alert.msg}}</alert>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-8">
+					<button class="btn btn-warning text-uppercase" ng-click="updateUser()" type="submit">
+						Сохранить 
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div ng-show='tab=="ord"'>
+         <h2 class="sub-header">Заказы</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Дата</th>
+                  <th>Номер</th>
+                  <th>Сумма</th>
+                  <th>Состояние</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01.01.2015</td>
+                  <td>В000016</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>03.01.2015</td>
+                  <td>В000016</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>06.01.2015</td>
+                  <td>В000016</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>10.01.2015</td>
+                  <td>В000016</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>24.01.2015</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+		  
+		 </div>
+
+	
+	
+	</div>
+  </div>
+</div>
+
+<img src="spinner.gif" class="spinner" ng-show="spinner"/>

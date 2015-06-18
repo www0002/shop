@@ -1,0 +1,24 @@
+== Info: Adding handle: conn: 0x6795a0
+== Info: Adding handle: send: 0
+== Info: Adding handle: recv: 0
+== Info: Curl_addHandleToPipeline: length: 1
+== Info: - Conn 0 (0x6795a0) send_pipe: 1, recv_pipe: 0
+== Info: About to connect() to localhost port 80 (#0)
+== Info:   Trying 127.0.0.1...
+== Info: Connected to localhost (127.0.0.1) port 80 (#0)
+=> Send header, 212 bytes (0xd4)
+0000: POST /upload HTTP/1.1
+0017: User-Agent: curl/7.33.0
+0030: Host: localhost
+0041: Accept: */*
+004e: Content-Length: 640544
+0066: Expect: 100-continue
+007c: Content-Type: multipart/form-data; boundary=--------------------
+00bc: ----ffce10bfacc937e7
+00d2: 
+<= Recv data, 97 bytes (0x61)
+0000: gj....|Sf.R)Un.h...W...}.u0....).^.......<l...JU..<}....6....+..
+0040: .g.m.c..f.D........]..h.......@..
+<= Recv data, 8 bytes (0x8)
+0000: .c.;..-.
+== Info: Connection #0 to host localhost left intact
