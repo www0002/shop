@@ -274,7 +274,7 @@ app.controller('homeCtrl', function($scope, mainFactory, cartFactory) {
 			//,text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' + ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
 		});
 	};
-	for (var i=0; i<2; i++) {
+	for (var i=0; i < 21; i++) {
 		$scope.addSlide();
 	}
 	
