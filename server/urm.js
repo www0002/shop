@@ -106,6 +106,8 @@ exports.apiRead = function(req, res) {
 		sqlWhere.push(' id = $' + sqlParam.length);
 	};
 	
+	sqlOrderBy = ' ORDER BY name';
+	
 	for (k in req.query) {
 		if (k == 'latest') {
 			sqlParam.push(req.query.latest);
@@ -116,6 +118,10 @@ exports.apiRead = function(req, res) {
 			sqlParam.push( req.query[k] );
 			sqlWhere.push(' ' + k + ' = $' + sqlParam.length);
 		}
+	};
+	
+	if (req.params.collection == 'product') {
+		sqlWhere.push(' hidden is not true');
 	};
 
 	sqlWhere.length && (sqlText += ' WHERE ' + sqlWhere.join(' AND '));

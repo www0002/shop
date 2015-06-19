@@ -296,7 +296,7 @@ app.controller('aboutCtrl', function($scope, $http, $rootScope){
 		$scope.map = { center: { latitude: $rootScope.companyData.compAdrLng, longitude: $rootScope.companyData.compAdrAlt }, zoom: 16 };
 		$scope.marker = { pos: { latitude: $rootScope.companyData.compAdrLng, longitude: $rootScope.companyData.compAdrAlt } };
 		
-		$scope.mAttr = {name: '', email: 'mail@sunfire.com', text: ''};
+		$scope.mAttr = {name: '', email: '', text: ''};
 		
 		$scope.sendMessage = function() {
 			// console.log('post: ', email, text);
