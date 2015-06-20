@@ -121,7 +121,7 @@ exports.apiRead = function(req, res) {
 	};
 	
 	if (req.params.collection == 'product') {
-		sqlWhere.push(' hidden is not true');
+		sqlWhere.push(' hidden is not true and price > 0');
 	};
 
 	sqlWhere.length && (sqlText += ' WHERE ' + sqlWhere.join(' AND '));

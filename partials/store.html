@@ -5,7 +5,8 @@
         </h2>
         <br>
     </div>
-    <div class="row vcenter" ng-repeat="product in products | limitTo: paginationLimit()">
+    <!-- <div class="row vcenter" ng-repeat="product in products | limitTo: paginationLimit()"> -->
+	<div class="row vcenter" ng-repeat="product in products">
         <div class="col-sm-2">
             <!-- <div class="image"> -->
                 <!-- <img alt="product" class="img-responsive thumbnail center-block" ng-src="data/products/{{product.id}}.jpg"/> -->
@@ -32,6 +33,7 @@
             </div>
         </div>
     </div>
+<!-- 	
     <div class="row">
         <div class="col-xs-12 center-block">
             <button class="btn btn-warning text-uppercase center-block" ng-click="showMoreItems()" ng-show="hasMoreItemsToShow()">
@@ -39,4 +41,5 @@
             </button>
         </div>
     </div>
-</div>
+ -->
+ </div>

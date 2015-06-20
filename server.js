@@ -39,7 +39,7 @@ var auth = require('./server/auth.js'); // after urm42!
 
 
 app.post('/message', function (req, res) {
-	mail.send({subject: req.body.subj, text: req.body.text});
+	mail.send({subject: req.body.subj, text: req.body.text}, function(rsl) { res.json(rsl) }, function(rsl) { res.status(404).json(rsl)});
 });
 
 

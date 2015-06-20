@@ -160,7 +160,7 @@ app.controller('loginCtrl', function ($scope, $modalInstance, $timeout, authFact
 				//inform.add('wrong passw');
 				var msg = { type: 'danger', msg: 'Неверные имя или пароль!' };
 				$scope.alerts.push(msg);
-				$timeout(function() { $scope.alerts.splice($scope.alerts.indexOf(msg), 1) }, 3000);
+				//$timeout(function() { $scope.alerts.splice($scope.alerts.indexOf(msg), 1) }, 3000);
 				//{ type: 'success', msg: 'Well done! You successfully read this important alert message.' }
 		});
 	};
@@ -291,6 +291,10 @@ app.controller('homeCtrl', function($scope, mainFactory, cartFactory) {
 
 app.controller('aboutCtrl', function($scope, $http, $rootScope){
 		
+		$scope.spinner = false;
+		
+		$scope.alerts = [];
+		
 		$scope.map = { center: { latitude: 47.194, longitude: 39.701 }, zoom: 7 };
 		
 		$scope.map = { center: { latitude: $rootScope.companyData.compAdrLng, longitude: $rootScope.companyData.compAdrAlt }, zoom: 16 };
@@ -299,9 +303,28 @@ app.controller('aboutCtrl', function($scope, $http, $rootScope){
 		$scope.mAttr = {name: '', email: '', text: ''};
 		
 		$scope.sendMessage = function() {
+			
+			if(!$scope.messageForm.$valid) return;
+			
+			$scope.spinner  = true;
+			
 			// console.log('post: ', email, text);
 			$scope.mAttr.subj = $scope.mAttr.name + '<' + $scope.mAttr.email + '>';
-			return $http.post('/message', $scope.mAttr);
+			return $http.post('/message', $scope.mAttr)
+					.success( function() {
+								//console.log('sssddd');
+								var msg = { type: 'success', msg: 'Сообщение отправлено.' };
+								$scope.alerts.push(msg);
+								$scope.spinner  = false;
+								
+								//$timeout(function() { $scope.alerts.splice($scope.alerts.indexOf(msg), 1) }, 3000); 
+								})
+					.error( function() {
+								var msg = { type: 'danger', msg: 'Не удалось отправить сообщение.' };
+								$scope.alerts.push(msg);
+								$scope.spinner  = false;
+							});
+						
 		}
 		
 });
@@ -323,7 +346,7 @@ app.controller('cabinetCtrl', function($scope, $rootScope, $timeout, authFactory
 			
 				 var msg = { type: 'success', msg: 'Данные успешно сохранены.' };
 				 $scope.alerts.push(msg);
-				 $timeout(function() { $scope.alerts.splice($scope.alerts.indexOf(msg), 1) }, 3000);
+				 //$timeout(function() { $scope.alerts.splice($scope.alerts.indexOf(msg), 1) }, 3000);
 				 $scope.spinner  = false;
 			},
 			function (res) { // error
@@ -452,26 +475,46 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 
 
-app.controller('cartCtrl', function($scope, $http, cartFactory, $resource){
+app.controller('cartCtrl', function($scope, $http, cartFactory, $resource, $timeout){
 	
+	$scope.spinner = false;
+	
+	$scope.alerts = [];
 	
 	$scope.cart = cartFactory.cart;
 	$scope.cartIsEmpty = function() {return $scope.cart.items.length == 0 };
 	
-	$scope.customer = {};
-/* 	
+	$scope.userData = {};
+
 	$scope.sendOrder = function() {
+		
+		if(!$scope.credentials.$valid) return;
+		
+		$scope.spinner  = true;
 		
 		$scope.mAttr = {name: 'сайт', email: 'robot@pegasus.com', subj:'поступил заказ'};
 		$scope.mAttr.text = 'Покупатель';
-		for (var k in $scope.customer) $scope.mAttr.text += '\n' + k + ': ' + $scope.customer[k];
+		for (var k in $scope.userData) $scope.mAttr.text += '\n' + k + ': ' + $scope.userData[k];
 		$scope.mAttr.text += $scope.cart.items.reduce( function(p,c){ return p += '\n' + c.name + '\nкол-во: ' + c.amt; }, '\n\nСпецификация');
 		$scope.mAttr.text += '\n\nСумма заказа: ' + $scope.cart.getTotal().sum;
 		console.log('post: ', $scope.mAttr.text);
-		return $http.post('/message', $scope.mAttr);
+		return $http.post('/message', $scope.mAttr)
+					.success( function() {
+								//console.log('sssddd');
+								var msg = { type: 'success', msg: 'Заказ поступил в обработку.' };
+								$scope.alerts.push(msg);
+								$scope.spinner  = false;
+								
+								//$timeout(function() { $scope.alerts.splice($scope.alerts.indexOf(msg), 1) }, 3000); 
+								})
+					.error( function() {
+								var msg = { type: 'danger', msg: 'Не удалось оформить заказ.' };
+								$scope.alerts.push(msg);
+								$scope.spinner  = false;
+							});
+						
 	};
-	 */
-	
+/* 	
 	$scope.sendOrder = function() {		
 
 		var resOrders = $resource('/api/orders/:item');
@@ -479,9 +522,8 @@ app.controller('cartCtrl', function($scope, $http, cartFactory, $resource){
 		newOrder.author = $scope.user.name;
 		newOrder.t_spec = $scope.cart.items;
 		newOrder.$save();
-		
 	};
-
+ */
 	
 })
 

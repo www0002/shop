@@ -7,6 +7,9 @@
         <div class="col-sm-12">
             <h2 class="text-center">Наши Контакты</h2>
             <br>
+            <h3 class="text-center">
+                {{companyData.companyName}} 
+            </h3>
             <h4 class="text-center">
                 <span class="glyphicon glyphicon-home"></span>
                 {{companyData.address}} 
@@ -22,7 +25,7 @@
             <br>
             <h2 class="text-center">Напишите Нам</h2>
             <br>
-            <form class="form-horizontal" role="form">
+            <form name="messageForm" class="form-horizontal" role="form">
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="name">
                         Имя 
@@ -36,7 +39,7 @@
                         Email 
                     </label>
                     <div class="col-sm-8">
-                        <input class="form-control" id="email" name="email" ng-model="mAttr.email" placeholder="" type="email">
+                        <input class="form-control" id="email" name="email" ng-model="mAttr.email" placeholder="" required type="email">
                     </div>
                 </div>
                 <div class="form-group">
@@ -47,6 +50,11 @@
                         <textarea class="form-control" id="message" name="message" ng-model="mAttr.text" placeholder="" required rows="5"></textarea>
                     </div>
                 </div>
+				
+				<div class="col-sm-offset-2 col-sm-8">
+					<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlertt(alerts, $index)">{{alert.msg}}</alert>
+				</div>
+				
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-8">
                         <button class="btn btn-warning text-uppercase" ng-click="sendMessage()" type="submit">
@@ -57,4 +65,7 @@
             </form>
         </div>
     </div>
+	
 </div>
+
+<img src="spinner.gif" class="spinner" ng-show="spinner"/>

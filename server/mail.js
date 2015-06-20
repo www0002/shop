@@ -26,12 +26,12 @@ var transporter = nodemailer.createTransport({
 		}
 	});
 
-exports.send = function(messageOptions, cb) {
+exports.send = function(messageOptions, cbsc, cber) {
 
 	Object.keys(messageOptions).forEach( function(e) {mailOptions[e] = messageOptions[e]} );
 
 	transporter.sendMail(mailOptions, function (error, info) {
-		if (cb) cb(error, info);
+		if (error) {cber(info)} else {cbsc(info)};
 	});
 	
 }

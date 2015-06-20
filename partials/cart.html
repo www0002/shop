@@ -79,7 +79,7 @@
         </table>
     </div>
 
-    <form class="form-horizontal" ng-show="!cartIsEmpty()">
+    <form name="credentials" class="form-horizontal" ng-show="!cartIsEmpty()">
         <div class="form-group" ng-show="!user.name">
             <label class="col-sm-2 control-label" for="name">
                 Имя 
@@ -112,6 +112,11 @@
                 <input class="form-control" name="address" ng-model="userData.address" placeholder="Адрес доставки" ng-required='!user.address'>
             </div>
         </div>
+		
+		<div class="col-sm-offset-2 col-sm-8">
+			<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlertt(alerts, $index)">{{alert.msg}}</alert>
+		</div>
+		
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
                 <button class="btn btn-warning text-uppercase" ng-click="sendOrder()" type="submit">
@@ -121,4 +126,5 @@
         </div>
     </form>
 </div>
-</div>
+
+<img src="spinner.gif" class="spinner" ng-show="spinner"/>
