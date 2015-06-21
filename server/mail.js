@@ -6,7 +6,6 @@ var mailOptions = {
 	from : 'mail.vaun@yandex.ru', //'vaun@bk.ru',
 	smtp_pass : 'HjcnjdLjy99', //'HjcnjdLjy77',
 	to : 'victor.dugin@yandex.ru, victor.dugin@gmail.com',
-	
 	subject : 'subject',
 	text : 'text' // plaintext body
 

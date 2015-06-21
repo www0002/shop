@@ -495,7 +495,7 @@ app.controller('cartCtrl', function($scope, $http, cartFactory, $resource, $time
 		$scope.mAttr = {name: 'сайт', email: 'robot@pegasus.com', subj:'поступил заказ'};
 		$scope.mAttr.text = 'Покупатель';
 		for (var k in $scope.userData) $scope.mAttr.text += '\n' + k + ': ' + $scope.userData[k];
-		$scope.mAttr.text += $scope.cart.items.reduce( function(p,c){ return p += '\n' + c.name + '\nкол-во: ' + c.amt; }, '\n\nСпецификация');
+		$scope.mAttr.text += $scope.cart.items.reduce( function(p,c){ return p += '\n' + c.name + '   кол: ' + c.amt + ' цена: ' + c.price + ' (' + c.pack_name + ')' }, '\n');
 		$scope.mAttr.text += '\n\nСумма заказа: ' + $scope.cart.getTotal().sum;
 		console.log('post: ', $scope.mAttr.text);
 		return $http.post('/message', $scope.mAttr)
@@ -537,19 +537,29 @@ function shoppingCart(cartName) {
 	this.loadItems();
 }
 
-shoppingCart.prototype.editItem = function (act, id, amt, name, price) {
+shoppingCart.prototype.editItem = function (act, product, amt) {
 
 	// act: set, add, del
-
+	var id = product.id;
+	var name = product.name;
+	
     amt = toNumb(amt);
 	
 	var found = false;
 	for (var i = 0; i < this.items.length && !found; i++) {
-		if (this.items[i].product_id == id) { found = true; break; };
+		if (this.items[i].id == id) { found = true; break; };
 	}
 	
 	if (act == 'add') {
-		if (found) { this.items[i].amt += amt; this.items[i].amt = Math.max(this.items[i].amt, 0); } else { this.items.push({'product_id':id, 'amt':amt, 'name':name, 'price':price}) }
+		if (found) { 
+			this.items[i].amt += amt; 
+			this.items[i].amt = Math.max(this.items[i].amt, 0); 
+		} else { 
+			this.items.push({'id':id, 'amt':amt, 'name':product.name, 'code':product.code,
+								'pack_name':(product.pack_sale) ? product.pack_name : product.unit_name,
+								'price': (product.pack_sale) ? product.price*product.pack_fact : product.price
+							}) 
+		}
 /* 	} else if (act == 'set') {
 		found && (this.items[i].amt = amt);
  */	} else if (act == 'del') {
@@ -591,6 +601,8 @@ shoppingCart.prototype.getTotal = function () {
 	totals.sum = totals.price + this.deliveryPrice - this.discount;
     return totals;
 }
+
+
 
 function toNumb(n) {
     n = parseInt(n);

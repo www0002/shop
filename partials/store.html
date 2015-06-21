@@ -10,7 +10,7 @@
         <div class="col-sm-2">
             <!-- <div class="image"> -->
                 <!-- <img alt="product" class="img-responsive thumbnail center-block" ng-src="data/products/{{product.id}}.jpg"/> -->
-				<img alt="product" class="img-responsive center-block" ng-src="data/products/{{product.id}}.jpg"/>
+				<img alt="product" class="img-responsive center-block" ng-src="data/products/{{product.code}}.jpg"/>
             <!-- </div> -->
         </div>
         <div class="col-sm-7">
@@ -26,7 +26,7 @@
             <!-- <h3><a ng-href="#/product/{{product.id}}"><i class="fa fa-rub"></i> {{product.price | number : 2}}</a></h3> -->
 			<h3><a ng-href="#/product/{{product.id}}">{{product.price | number : 2}}</a></h3>
             <div>
-                <button class="btn" ng-click="cart.editItem('add', product.id, 1, product.name, product.price)" type="button">
+                <button class="btn" ng-click="cart.editItem('add', product, 1)" type="button">
                     В корзину
                     <i class="fa fa-shopping-cart"></i>
                 </button>

@@ -16,6 +16,9 @@
                         Количество 
                     </td>
                     <td class="text-center">
+                        Ед. 
+                    </td>
+                    <td class="text-center">
                         Цена 
                     </td>
                     <td class="text-center">
@@ -27,11 +30,11 @@
                 <tr ng-repeat="item in cart.items">
                     <td class="text-center">
                         <a href="product.html">
-                            <img alt="Product Name" height="70" ng-src="data/products/{{item.product_id}}.jpg" title="Product Name"/>
+                            <img alt="Product Name" height="70" ng-src="data/products/{{item.code}}.jpg" title="Product Name"/>
                         </a>
                     </td>
                     <td class="text-center vert-align">
-                        <a ng-href="#/product/{{item.product_id}}">{{item.name}}</a>
+                        <a ng-href="#/product/{{item.id}}">{{item.name}}</a>
                     </td>
                     <td class="text-center vert-align">
                         <form class="form-inline" role="form">
@@ -40,21 +43,23 @@
                                     <input class="form-control" name="amt" ng-change="cart.saveItems()" ng-model="item.amt" size="1" type="text"/>
                                 </div>
                             </div>
-                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('add', item.product_id, 1)" title="Remove" type="button">
+                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('add', item, 1)" title="Remove" type="button">
                                     <!-- <i class="fa fa-times-circle"></i> -->
 									<span class="glyphicon glyphicon-plus"></span>
                                 </button>
-                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('add', item.product_id, -1)" title="Remove" type="button">
+                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('add', item, -1)" title="Remove" type="button">
                                     <!-- <i class="fa fa-times-circle"></i> -->
 									<span class="glyphicon glyphicon-minus"></span>
                                 </button>
-                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('del', item.product_id)" title="Remove" type="button">
+                                <button class="btn btn-default tool-tip" ng-click="cart.editItem('del', item)" title="Remove" type="button">
                                     <!-- <i class="fa fa-times-circle"></i> -->
 									<span class="glyphicon glyphicon-remove"></span>
                                 </button>
                         </form>
                     </td>
-
+                    <td class="text-center vert-align">
+                        {{item.pack_name}}
+                    </td>
                     <td class="text-center vert-align">
                         <!-- <i class="fa fa-rub"></i> -->
                         {{item.price | number : 2}} 
