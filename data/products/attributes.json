@@ -1,0 +1,9 @@
+﻿[
+{"name":"id","descr":"Код"},
+{"name":"name","descr":"Наименование"},
+{"name":"brand","descr":"Марка"},
+{"name":"pack","descr":"В упаковке"},
+{"name":"vendor","descr":"Производитель"},
+{"name":"volume","descr":"Объем"},
+{"name":"weight","descr":"Вес"}
+]
