@@ -258,6 +258,10 @@ app.controller('mainCtrl', function ($scope, $modal, $rootScope, $resource, auth
  */
  
 	};
+	
+	$scope.image = function(product, size) {
+		return 'data/products/' + product.code + '-s.jpg'
+	}
 
 });
 
@@ -494,7 +498,11 @@ app.controller('cartCtrl', function($scope, $http, cartFactory, $resource, $time
 		
 		$scope.mAttr = {name: 'сайт', email: 'robot@pegasus.com', subj:'поступил заказ'};
 		$scope.mAttr.text = 'Покупатель';
-		for (var k in $scope.userData) $scope.mAttr.text += '\n' + k + ': ' + $scope.userData[k];
+		
+		//for (var k in $scope.userData) $scope.mAttr.text += '\n' + k + ': ' + $scope.userData[k];
+		var userInfo = ($scope.user.name) ? $scope.user : $scope.userData;
+		for (var k in userInfo) $scope.mAttr.text += '\n' + k + ': ' + userInfo[k];
+		
 		$scope.mAttr.text += $scope.cart.items.reduce( function(p,c){ return p += '\n' + c.name + '   кол: ' + c.amt + ' цена: ' + c.price + ' (' + c.pack_name + ')' }, '\n');
 		$scope.mAttr.text += '\n\nСумма заказа: ' + $scope.cart.getTotal().sum;
 		console.log('post: ', $scope.mAttr.text);
@@ -598,11 +606,11 @@ shoppingCart.prototype.getTotal = function () {
 		totals.count += parseInt(item.amt);
 		totals.price += Math.round(parseFloat(item.amt) * item.price * 100) / 100 ;
         }
-	totals.sum = totals.price + this.deliveryPrice - this.discount;
+	//totals.sum = totals.price + this.deliveryPrice - this.discount;
+	totals.sum = totals.price;
+	
     return totals;
 }
-
-
 
 function toNumb(n) {
     n = parseInt(n);

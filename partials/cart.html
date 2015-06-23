@@ -29,8 +29,8 @@
             <tbody>
                 <tr ng-repeat="item in cart.items">
                     <td class="text-center">
-                        <a href="product.html">
-                            <img alt="Product Name" height="70" ng-src="data/products/{{item.code}}-s.jpg" title="Product Name"/>
+                        <a href="#/product/{{item.id}}">
+                            <img alt="Product Name" height="70" ng-src="{{image(item)}}" title="Product Name"/>
                         </a>
                     </td>
                     <td class="text-center vert-align">

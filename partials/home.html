@@ -10,7 +10,7 @@
         <div class="col-md-3 col-sm-6" ng-repeat="product in latestProducts">
             <div class="product-col">
                 <div class="image">
-                    <img alt="product" class="img-responsive" ng-src="data/products/{{product.code}}-s.jpg"/>
+                    <img alt="product" class="img-responsive" ng-src="{{image(product)}}"/>
                 </div>
                 <div class="caption">
                     <h4><a ng-href="#/product/{{product.id}}">{{product.name}}</a></h4>
