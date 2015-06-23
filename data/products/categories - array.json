@@ -1,6 +1,0 @@
-﻿[
-{"name":"light", "desc":"Светлое", "sub":[{"name":"l_5", "desc":"Алк. до 5%"}, {"name":"l_10", "desc":"Алк. до 10%"}]},
-{"name":"dark", "desc":"Темное", "sub":[{"name":"d_5", "desc":"Алк. до 5%"}, {"name":"d_10", "desc":"Алк. до 10%"}]},
-{"name":"keg", "desc":"Кеговое"},
-{"name":"snack", "desc":"Снеки"}
-]
