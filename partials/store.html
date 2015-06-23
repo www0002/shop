@@ -7,21 +7,24 @@
     </div>
     <!-- <div class="row vcenter" ng-repeat="product in products | limitTo: paginationLimit()"> -->
 	<div class="row vcenter" ng-repeat="product in products">
-        <div class="col-sm-2">
+        
+		<div class="col-sm-2">
             <!-- <div class="image"> -->
                 <!-- <img alt="product" class="img-responsive thumbnail center-block" ng-src="data/products/{{product.id}}.jpg"/> -->
 				<img alt="product" class="img-responsive center-block" ng-src="data/products/{{product.code}}.jpg"/>
             <!-- </div> -->
         </div>
-        <div class="col-sm-7">
+        
+		<div class="col-sm-7">
 			<div>
 				<h4><a ng-href="#/product/{{product.id}}">{{product.name}}</a></h4>
 				<div>
 					<!-- {{product.description}}  -->
-					упаковка: {{product.pack}}, вес: {{product.weight}}
+					единица: {{product.unit_name}}, в упаковке: {{product.pack_fact}}
 				</div>
 			</div>
         </div>
+		
         <div class="col-sm-3 text-right">
             <!-- <h3><a ng-href="#/product/{{product.id}}"><i class="fa fa-rub"></i> {{product.price | number : 2}}</a></h3> -->
 			<h3><a ng-href="#/product/{{product.id}}">{{product.price | number : 2}}</a></h3>
@@ -32,6 +35,8 @@
                 </button>
             </div>
         </div>
+		
+		
     </div>
 <!-- 	
     <div class="row">

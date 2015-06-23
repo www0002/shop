@@ -15,8 +15,8 @@
 
 				<hr/>
 
-				<h5>Цена : <span><span><i class="fa fa-rub"></i></span> {{product.price}}</span> </h5>
-				<h5>Наличие : <strong class="label label-danger">Под заказ</strong> </h5>
+				<h3>Цена : <span><span><i class="fa fa-rub"></i></span> {{product.price}}</span> </h3>
+				<!-- <h5>Наличие : <strong class="label label-danger">Под заказ</strong> </h5> -->
 
 				<div class="form-group">
 					<div class="controls form-inline">
@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="cart-button button-group">
-					<button class="btn btn-cart" type="button" ng-click="cart.editItem('add', product.id, amt, product.name, product.price)">
+					<button class="btn btn-cart" type="button" ng-click="cart.editItem('add', product, amt)">
 						В корзину
 						<i class="fa fa-shopping-cart"></i>
 					</button>

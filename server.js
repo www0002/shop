@@ -67,13 +67,17 @@ app.get('/api/:collection/:id', urm42.apiRead);
 
 app.post('/upload'
 	,multer({
-		dest:'./uploads/', 
+		dest:'./data/products/', 
 		onError: function (error, next) {
 		  console.log(error);
 		  next(error);
 		},
+		rename: function (fieldname, filename, req, res) {
+			//console.log('=>', filename)
+			return filename
+		},
 		onFileUploadComplete: function (file, req, res) { 
-			console.log('>>>', file.name,' is complete')
+			//console.log('>>>', file.name,' is complete')
 		}})
 	,function(req, res) { res.send("Your file was uploaded to " + ( req.files.file ? req.files.file.path : '???') ) }
 );
