@@ -388,6 +388,17 @@ app.controller('productCtrl', function($scope, $routeParams, mainFactory, cartFa
 
 });
 
+app.controller('orderCtrl', function($scope, $routeParams, mainFactory) {
+
+	// create tmp account by token
+	// access to order token==order.author only
+
+	$scope.id = $routeParams.orderId;
+	
+	$scope.order = mainFactory.apiResource.get({collection: 'order', item: $scope.id});
+
+});
+
 app.controller('storeCtrl', function ($scope, $http, $routeParams, mainFactory, cartFactory) {
 
 	$scope.products = [];
@@ -448,6 +459,10 @@ app.config(['$routeProvider', function ($routeProvider) {
 				templateUrl : 'partials/product.html',
 				controller : 'productCtrl'
 			})
+			.when('/order/:orderId', {
+				templateUrl : 'partials/order.html',
+				controller : 'orderCtrl'
+			})
 			.when('/store/:category', {
 				templateUrl : 'partials/store.html',
 				// controller : 'storeCtrl'
@@ -505,7 +520,7 @@ app.controller('cartCtrl', function($scope, $http, cartFactory, $resource, $time
 		
 		$scope.mAttr.text += $scope.cart.items.reduce( function(p,c){ return p += '\n' + c.name + '   кол: ' + c.amt + ' цена: ' + c.price + ' (' + c.pack_name + ')' }, '\n');
 		$scope.mAttr.text += '\n\nСумма заказа: ' + $scope.cart.getTotal().sum;
-		console.log('post: ', $scope.mAttr.text);
+		//console.log('post: ', $scope.mAttr.text);
 		return $http.post('/message', $scope.mAttr)
 					.success( function() {
 								//console.log('sssddd');
