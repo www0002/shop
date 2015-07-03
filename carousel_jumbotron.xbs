@@ -1,0 +1,4 @@
+resize( 1 lanczos 1170 0 0 1 0 )
+canvas( 0 0 492 4 0 0 0 0 )
+settings( 3 0 0 0 0 0 0 )
+output( jpeg 80 0 0 0 0 0 1 1 1 0 1 )

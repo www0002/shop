@@ -82,26 +82,25 @@ app.post('/upload'
 	,function(req, res) { res.send("Your file was uploaded to " + ( req.files.file ? req.files.file.path : '???') ) }
 );
  
- 
- 
- 
-// Example endpoint 
 
-//app.use(cors());
-/* 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+app.all('/server/*', function(req, res, next) {
+  res.send('404');
 });
-  */
-//app.post('/upload', multipartyMiddleware);
+app.all('/.git/*', function(req, res, next) {
+  res.send('404');
+});
+app.all('/uploads/*', function(req, res, next) {
+  res.send('404');
+});
+
 
 
 app.use(express.static(__dirname));
+
 app.get("/", function (req, res) {
 	res.redirect("/index.html");
 });
 
+ 
 //app.listen(3000);
 app.listen(80);
