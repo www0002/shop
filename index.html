@@ -36,10 +36,14 @@
 	</head>
 	<body ng-controller="mainCtrl" ng-cloak>
 	
+
 		<!-- <nav class="navbar navbar-inverse navbar-fixed-top"> -->
 		 <nav class="navbar navbar-default navbar-fixed-top">
-
+		 
 			<div class="container">
+			
+			<a href="#"><img class="navbar-brand" src="/data/home/logo.png"></a>
+			
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
 					<span class="sr-only">Toggle navigation</span>
@@ -50,15 +54,13 @@
 					<!-- <a class="navbar-brand" href="http://getbootstrap.com/examples/jumbotron/#">{{companyData.companyName}}</a> -->
 				</div>
 				
-				
-				
 				<div id="navbar" class="navbar-collapse collapse navbar-right" collapse="navCollapsed">
 				  <ul class="nav navbar-nav" ng-click="navCollapsed = true">
 				  
 				  
 					<!-- <li><a href="#/upload"><span class="glyphicon glyphicon-hand-right"></span> test</a></li> -->
 					<!-- <li><a href="#/home"><span class="glyphicon glyphicon-home"></span> Главная</a></li> -->
-					<a href="#" class="pull-left"><img class="navbar-brand" src="/data/home/logo.png"></a>
+					<!-- <a href="#"><img class="navbar-brand" src="/data/home/logo.png"></a> -->
 					
 					<li><a href="#/store"><span class="glyphicon glyphicon-gift"></span> Магазин</a></li>
 					<li><a href="#/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Корзина({{cart.getTotal().price | number : 2}})</a></li>
@@ -81,8 +83,9 @@
 
 			</div>
 		</nav>
+
 		
-		<!-- <div inform class="inform-fixed inform-animate inform-shadow"></div> -->
+
 		
 		<div class="ng-view" autoscroll="true"></div>
 
